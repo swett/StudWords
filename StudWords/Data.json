@@ -1,0 +1,37 @@
+[
+    {
+        "word": "nnn",
+        "synonym": ["nnn"],
+        "meaning": "nn"
+    },
+    {
+        "word": "mmm",
+        "synonym": ["mmm"],
+        "meaning": "mm"
+    },
+    {
+        "word": "hhh",
+        "synonym": ["hhh"],
+        "meaning": "hh"
+    },
+    {
+        "word": "yyy",
+        "synonym": ["yyy"],
+        "meaning": "yy"
+    },
+    {
+        "word": "ttt",
+        "synonym": ["ttt"],
+        "meaning": "tt"
+    },
+    {
+        "word": "rrr",
+        "synonym": ["rrr"],
+        "meaning": "rr"
+    },
+    {
+        "word": "qqq",
+        "synonym": ["qqq"],
+        "meaning": "qq"
+    }
+]
