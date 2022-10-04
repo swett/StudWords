@@ -15,6 +15,7 @@ protocol MainViewDelegate: AnyObject {
 
 protocol StorageProtocol {
     func getWords(completion: @escaping ([Word]?, String?) -> Void)
+    func addWord(text: OldStyleWord)
 }
 
 protocol MainViewModelProtocol {

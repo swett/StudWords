@@ -16,7 +16,7 @@ protocol AppDataProtocol{
 class AppData: NSObject {
     
     static let shared = AppData()
-    
+    var word = OldStyleWord()
     var words: [OldStyleWord] = []
 }
 
@@ -53,6 +53,18 @@ extension AppData {
 }
 
 extension AppData: StorageProtocol {
+    
+    func addWord(text: OldStyleWord){
+//        var word = OldStyleWord()
+        word.word = text.word
+        word.synonym = text.synonym
+        word.meaning = text.meaning
+//        let mapped = WordMapper.map(oldStyleWord: word)
+        
+        words.append(word)
+    }
+    
+    
     func getWords(completion: @escaping ([Word]?, String?) -> Void) {
         getWord { words, error in
             let mapped = words?.map { word in
@@ -64,4 +76,7 @@ extension AppData: StorageProtocol {
             
         }
     }
+    
+    
 }
+
