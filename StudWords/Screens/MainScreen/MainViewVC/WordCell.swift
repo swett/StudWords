@@ -8,7 +8,7 @@
 import UIKit
 
 class WordCell: UITableViewCell {
-
+    
     private var titleLabel: UILabel!
     var containerView: UIView!
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -29,7 +29,7 @@ private extension WordCell {
         contentView.backgroundColor = UIColor(named: "YellowColor")
         containerView = UIView().then({ container in
             contentView.addSubview(container)
-//            container.backgroundColor = UIColor(named: "YellowColor")
+            //            container.backgroundColor = UIColor(named: "YellowColor")
             container.snp.makeConstraints { make in
                 make.top.left.right.equalToSuperview()
                 make.height.equalTo(60)

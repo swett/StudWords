@@ -7,32 +7,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "DFC7F9FE-F9D1-4DF0-BD61-BCF14D4BA9DC"
+            uuid = "C0E8F8F1-7996-4F8C-9B4E-0FD4E4E00F6C"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "StudWords/Screens/ChooseLanguageScreen/ChooseLanguageViewController.swift"
+            filePath = "StudWords/Screens/MainScreen/ViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
-            landmarkName = "chooseLanguage(sender:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "CECA8331-7EE6-4CD5-A91B-EC36D70AC532"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "StudWords/Screens/ChooseLanguageScreen/ChooseLanguageViewController.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "137"
-            endingLineNumber = "137"
-            landmarkName = "loadData()"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "addCustomTabBarView()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

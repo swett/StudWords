@@ -8,16 +8,17 @@
 import UIKit
 
 class AddWordVC: UIViewController {
-
+    
     
     let maxDimmedAlpha: CGFloat = 0.65
-    let defaultHeight: CGFloat = 820
+    let defaultHeight: CGFloat = 690
     
     
     var bgView: UIView!
     var containerView: UIView!
     var dimmedView: UIView!
     var blurView: UIView!
+    var presentTitleLabel: UILabel!
     var addButton: UIButton!
     var closeButton: UIButton!
     
@@ -44,7 +45,7 @@ class AddWordVC: UIViewController {
         bgView.layer.shadowOpacity = 1
         closeButton.layer.cornerRadius = 0.5 * closeButton.bounds.size.width
     }
-
+    
 }
 
 
@@ -94,8 +95,9 @@ extension AddWordVC {
             button.setTitle("X", for: .normal)
             button.titleLabel?.font = UIFont.monospacedSystemFont(ofSize: 18, weight: .thin)
             button.addTarget(self, action:#selector(buttonTapped(sender:)) , for: .touchUpInside)
+            button.clipsToBounds = false
             button.snp.makeConstraints { make in
-                make.top.equalTo(containerView.snp.top).inset(-15)
+                make.top.equalTo(containerView.snp.top).inset(-5)
                 make.right.equalToSuperview().inset(20)
                 make.height.equalTo(30)
                 make.width.equalTo(30)
@@ -107,10 +109,15 @@ extension AddWordVC {
             bg.layer.cornerRadius = 10
             bg.backgroundColor = .white
             bg.snp.makeConstraints { make in
-                make.top.equalTo(containerView).offset(70)
-                make.left.right.equalToSuperview().inset(30)
-                make.height.equalTo(550)
+                make.top.equalTo(containerView.snp.top).offset(10)
+                make.left.right.equalToSuperview()
+                make.height.equalTo(0)
+                //                make.bottom.equalToSuperview()
             }
+            
+        })
+        
+        presentTitleLabel = UILabel().then({ label in
             
         })
         
@@ -135,21 +142,27 @@ extension AddWordVC {
             self.blurView.alpha = 1
         }
         dimmedView.alpha = 0
-        UIView.animate(withDuration: 0.4) {
+        UIView.animate(withDuration: 0.35) {
             self.dimmedView.alpha = self.maxDimmedAlpha
         }
     }
     func animatePresentContainer(){
-        UIView.animate(withDuration: 0.3) {
+        UIView.animate(withDuration: 0.5) {
             self.containerView.snp.remakeConstraints { make in
                 make.height.equalTo(self.defaultHeight)
                 make.bottom.equalToSuperview()
                 make.left.right.equalToSuperview()
             }
+            self.bgView.snp.remakeConstraints { make in
+                make.height.equalTo(620)
+                make.bottom.equalToSuperview()
+                make.left.right.equalToSuperview()
+            }
             self.view.layoutIfNeeded()
         }
+        
     }
-
+    
     func animateDismissView() {
         
         UIView.animate(withDuration: 0.5) {
@@ -171,7 +184,7 @@ extension AddWordVC {
         } completion: { _ in
             self.dismiss(animated: true)
         }
-
+        
     }
     @objc func buttonTapped(sender: UIButton) {
         print("tapped")

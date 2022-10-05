@@ -8,7 +8,7 @@
 import UIKit
 
 class MainViewVC: UIViewController {
-
+    
     private var viewModel: MainViewModelProtocol
     
     var wordsTableView: UITableView!
@@ -40,7 +40,7 @@ class MainViewVC: UIViewController {
         super.viewDidAppear(animated)
         viewModel.viewDidAppear()
     }
- 
+    
 }
 
 
@@ -99,8 +99,8 @@ extension MainViewVC: MainViewDelegate {
     
     func didChangeLoadingState(isLoading: Bool) {
         isLoading
-            ? indicator.startAnimating()
-            : indicator.stopAnimating()
+        ? indicator.startAnimating()
+        : indicator.stopAnimating()
     }
     func didEndLoading() {
         wordsTableView.reloadData()

@@ -24,7 +24,6 @@
 		428E9CDB28EB0E0A004D43AE /* WordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E9CDA28EB0E0A004D43AE /* WordCell.swift */; };
 		428E9CDE28EB2974004D43AE /* RepeatWordsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E9CDD28EB2974004D43AE /* RepeatWordsVC.swift */; };
 		428E9CE128EC8ED6004D43AE /* AddWordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E9CE028EC8ED6004D43AE /* AddWordVC.swift */; };
-		428E9CE328ECA2E6004D43AE /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E9CE228ECA2E6004D43AE /* CustomTabBar.swift */; };
 		8B733A0DBFBCD41D1B6400D8 /* Pods_StudWords.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 603DA026ABA8EFD27F40027D /* Pods_StudWords.framework */; };
 /* End PBXBuildFile section */
 
@@ -48,7 +47,6 @@
 		428E9CDA28EB0E0A004D43AE /* WordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCell.swift; sourceTree = "<group>"; };
 		428E9CDD28EB2974004D43AE /* RepeatWordsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatWordsVC.swift; sourceTree = "<group>"; };
 		428E9CE028EC8ED6004D43AE /* AddWordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWordVC.swift; sourceTree = "<group>"; };
-		428E9CE228ECA2E6004D43AE /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
 		603DA026ABA8EFD27F40027D /* Pods_StudWords.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StudWords.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A40467E92F65719C8156E0EA /* Pods-StudWords.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudWords.debug.xcconfig"; path = "Target Support Files/Pods-StudWords/Pods-StudWords.debug.xcconfig"; sourceTree = "<group>"; };
 		E2B32FEA8E109F284028FDCA /* Pods-StudWords.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudWords.release.xcconfig"; path = "Target Support Files/Pods-StudWords/Pods-StudWords.release.xcconfig"; sourceTree = "<group>"; };
@@ -141,7 +139,6 @@
 			children = (
 				428E9CCF28EB079C004D43AE /* MainViewVC */,
 				428E9CB028E4910E004D43AE /* ViewController.swift */,
-				428E9CE228ECA2E6004D43AE /* CustomTabBar.swift */,
 			);
 			path = MainScreen;
 			sourceTree = "<group>";
@@ -323,7 +320,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				428E9CB128E4910E004D43AE /* ViewController.swift in Sources */,
-				428E9CE328ECA2E6004D43AE /* CustomTabBar.swift in Sources */,
 				428E9CD628EB0B6F004D43AE /* WordsStorage.swift in Sources */,
 				428E9CCE28E5F5F4004D43AE /* OldStyleWord.swift in Sources */,
 				428E9CDE28EB2974004D43AE /* RepeatWordsVC.swift in Sources */,

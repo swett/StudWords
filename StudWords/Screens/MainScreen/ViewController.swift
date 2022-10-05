@@ -12,77 +12,131 @@ class ViewController: UITabBarController {
     let allWords = MainViewVC(viewModel: MainViewModel(storage: AppData.shared))
     let repeatWords = RepeatWordsVC()
     let centerView = UIViewController()
-    var button: UIButton!
-//    var customTabBarView = UIView(frame: .zero)
+    var wordAddButton: UIButton!
+    var customTabBarView = UIView(frame: .zero)
+    var showRepeatWordsButton: UIButton!
+    var showAllWordsButton: UIButton!
     
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-//        button.frame = CGRect.init(x: self.tabBar.center.x - 32, y: self.view.bounds.height - 74, width: 64, height: 64)
-    }
+    
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.tabBar.selectedItem?.badgeColor = .white
-        self.tabBar.unselectedItemTintColor = .gray
-        tabBar.clipsToBounds = false
-//        tabBar.isHidden = true
-        self.delegate = self
-        setupMiddleButton()
-        tabBar.backgroundColor = .black
-        allWords.title = "All Words"
-        repeatWords.title = "Repeat Words"
+        tabBar.isHidden = true
+        self.addCustomTabBarView()
         self.setViewControllers([repeatWords,centerView,allWords], animated: true)
         
         
     }
     
-
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+    }
+    
 }
 
 
 extension ViewController {
-    func setupMiddleButton() {
-        let paddingBottom : CGFloat = 10.0
-        button = UIButton(type: .custom).then({ button in
+    
+    
+    private func addCustomTabBarView() {
+        
+        customTabBarView = UIView().then({ tabBarView in
+            self.view.addSubview(tabBarView)
             
-            button.frame = CGRect(x: 0, y: 0, width: 64, height: 64)
-            button.frame.origin.x = tabBar.bounds.width/2 - button.frame.size.width/2
-//            button.frame.origin.y = -20
-//            button.layer.cornerRadius = 35
-//            button.backgroundColor = .purple
-            let image = UIImage(systemName: "plus.circle.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 64, weight: .semibold))
+            tabBarView.frame = tabBar.frame
+            tabBarView.backgroundColor = .purple
+            tabBarView.layer.cornerRadius = 30
+            tabBarView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
+            tabBarView.layer.masksToBounds = false
+            tabBarView.layer.shadowColor = UIColor.black.withAlphaComponent(0.2).cgColor
+            tabBarView.layer.shadowOffset = CGSize(width: -4, height: -6)
+            tabBarView.layer.shadowOpacity = 0.5
+            tabBarView.layer.shadowRadius = 20
+            tabBarView.snp.makeConstraints { make in
+                make.height.equalTo(view.safeAreaInsets).offset(90)
+                make.left.right.equalToSuperview()
+                make.bottom.equalToSuperview()
+            }
+        })
+        
+        wordAddButton = UIButton(type: .custom).then({ button in
+            customTabBarView.addSubview(button)
+            button.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
+            let image = UIImage(systemName: "plus.circle.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 44, weight: .light))
             button.tintColor = .white
             button.setImage(image, for: .normal)
-//            button.contentMode = .scaleAspectFill
+            
             button.addTarget(self, action: #selector(self.presentAddWord(sender:)) , for: .touchUpInside)
             
-            
-//            self.tabBar.addSubview(button)
-            self.view.insertSubview(button, aboveSubview: self.tabBar)
-//            self.view.bringSubviewToFront(button)
-            
             button.snp.makeConstraints { make in
-                make.top.equalTo(tabBar.snp.top).offset(-40)
+                make.top.equalTo(customTabBarView.snp.top).offset(-60)
                 make.centerX.equalToSuperview()
                 make.bottom.equalTo(view.safeAreaInsets).inset(10)
             }
-            
-            self.view.layoutIfNeeded()
         })
-//        tabBar.center = UIWindow.safeAreaInsets.bottom
+        
+        showRepeatWordsButton = UIButton(type: .custom).then({ button in
+            
+            customTabBarView.addSubview(button)
+            button.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
+            //            let image = UIImage(systemName: "plus.circle.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 44, weight: .light))
+            button.tintColor = .white
+            button.tag = 0
+            //            button.setImage(image, for: .normal)
+            button.setTitle("repeat", for: .normal)
+            button.addTarget(self, action: #selector(changeScreen(sender:)) , for: .touchUpInside)
+            
+            button.snp.makeConstraints { make in
+                make.top.equalTo(customTabBarView.snp.top)
+                make.left.equalToSuperview().inset(25)
+                make.bottom.equalTo(view.safeAreaInsets).inset(10)
+            }
+        })
+        
+        showAllWordsButton = UIButton(type: .custom).then({ button in
+            customTabBarView.addSubview(button)
+            button.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
+            
+            //            let image = UIImage(systemName: "plus.circle.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 44, weight: .light))
+            button.tintColor = .white
+            button.tag = 2
+            //            button.setImage(image, for: .normal)
+            button.setTitle("show All", for: .normal)
+            button.addTarget(self, action: #selector(changeScreen(sender:)) , for: .touchUpInside)
+            
+            button.snp.makeConstraints { make in
+                make.top.equalTo(customTabBarView.snp.top)
+                make.right.equalToSuperview().inset(25)
+                make.bottom.equalTo(view.safeAreaInsets).inset(10)
+            }
+        })
+        
+        
         
     }
     
+    
     @objc func presentAddWord(sender: UIButton) {
-        self.selectedIndex = 1
+        //        self.selectedIndex = 1
         print("touched")
-//
+        //
         let addWordVC = AddWordVC()
         addWordVC.modalPresentationStyle = .overFullScreen
-        self.present(addWordVC, animated: true)
-        self.selectedIndex = 0
+        self.present(addWordVC, animated: false)
+        //        self.selectedIndex = 0
+    }
+    
+    @objc func changeScreen(sender: UIButton) {
+        
+        switch sender.tag {
+        case 0 : self.selectedIndex = 0
+        case 2 : self.selectedIndex = 2
+        default:
+            print("nam vsem pizda knopki na custom uiTabBar")
+        }
+        
     }
     
 }

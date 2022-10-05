@@ -9,7 +9,7 @@ import UIKit
 import Then
 import SnapKit
 class ChooseLanguageViewController: UIViewController {
-
+    
     var chooseLanguageLabel: UILabel!
     var ukraineLanguageButton: UIButton!
     var englishLanguageButton: UIButton!
@@ -42,7 +42,7 @@ class ChooseLanguageViewController: UIViewController {
 }
 
 extension ChooseLanguageViewController {
- 
+    
     
     
     
@@ -106,7 +106,7 @@ extension ChooseLanguageViewController {
 
 extension ChooseLanguageViewController {
     @objc func chooseLanguage(sender: UIButton){
-       
+        
         let button = sender
         print(button.tag)
         UIView.animate(withDuration: 0.2) {
@@ -128,8 +128,8 @@ extension ChooseLanguageViewController {
         default:
             print("aaa nam vsem pizda")
         }
-
-//
+        
+        //
     }
     func loadData() {
         apiClient?.getWord { [weak self] words, error in
