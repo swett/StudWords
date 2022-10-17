@@ -7,25 +7,30 @@
 
 import UIKit
 
-class ViewController: UITabBarController {
+class TabViewController: UITabBarController {
     
-    let allWords = MainViewVC(viewModel: MainViewModel(storage: AppData.shared))
-    let repeatWords = RepeatWordsVC()
-    let centerView = UIViewController()
     var wordAddButton: UIButton!
     var customTabBarView = UIView(frame: .zero)
     var showRepeatWordsButton: UIButton!
     var showAllWordsButton: UIButton!
     
+    private let coordinator: CoordinatorProtocol
     
-    
-    
+    //MARK: - Lifecycle
+    init(coordinator: CoordinatorProtocol) {
+        self.coordinator = coordinator
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         tabBar.isHidden = true
         self.addCustomTabBarView()
-        self.setViewControllers([repeatWords,centerView,allWords], animated: true)
+        
         
         
     }
@@ -37,7 +42,7 @@ class ViewController: UITabBarController {
 }
 
 
-extension ViewController {
+extension TabViewController {
     
     
     private func addCustomTabBarView() {
@@ -119,13 +124,7 @@ extension ViewController {
     
     
     @objc func presentAddWord(sender: UIButton) {
-        //        self.selectedIndex = 1
-        print("touched")
-        //
-        let addWordVC = AddWordVC()
-        addWordVC.modalPresentationStyle = .overFullScreen
-        self.present(addWordVC, animated: false)
-        //        self.selectedIndex = 0
+        coordinator.showAddWordScreen()
     }
     
     @objc func changeScreen(sender: UIButton) {
@@ -141,7 +140,7 @@ extension ViewController {
     
 }
 
-extension ViewController: UITabBarControllerDelegate {
+extension TabViewController: UITabBarControllerDelegate {
     
     
 }

@@ -7,33 +7,26 @@
 
 import Foundation
 
-protocol MainViewDelegate: AnyObject {
+protocol AllWordsView: AnyObject {
     func didChangeLoadingState(isLoading: Bool)
     func didEndLoading()
 }
 
-
-protocol StorageProtocol {
-    func getWords(completion: @escaping ([Word]?, String?) -> Void)
-    func addWord(text: OldStyleWord)
-}
-
-protocol MainViewModelProtocol {
-    var delegate: MainViewDelegate? {get set}
+protocol AllWordsModelProtocol {
+    var delegate: AllWordsView? {get set}
     
     func viewDidAppear()
     func numberOfRows(in section: Int) -> Int
     func model(at indexPath: IndexPath) -> WordViewModel
-    
     func didSelectRow(at indexPath: IndexPath)
 }
 
 
-class MainViewModel {
+class AllWordsViewModel {
     private var words: [Word] = []
     private let storage: StorageProtocol!
     
-    weak var delegate: MainViewDelegate?
+    weak var delegate: AllWordsView?
     
     
     init(storage: StorageProtocol){
@@ -56,7 +49,7 @@ class MainViewModel {
 }
 
 
-extension MainViewModel: MainViewModelProtocol {
+extension AllWordsViewModel: AllWordsModelProtocol {
     
     
     func viewDidAppear() {
@@ -77,5 +70,6 @@ extension MainViewModel: MainViewModelProtocol {
     func didSelectRow(at indexPath: IndexPath) {
         let model = words[indexPath.row]
     }
+    
     
 }

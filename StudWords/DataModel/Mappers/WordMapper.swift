@@ -14,10 +14,4 @@ enum WordMapper {
             translation: ""
         )
     }
-    
-    static func map (oldStyleWord: OldStyleWord) -> Word {
-        Word(
-            text: oldStyleWord.word
-        )
-    }
 }

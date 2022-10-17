@@ -8,24 +8,35 @@
 import UIKit
 import Then
 import SnapKit
+
+protocol ChooseLanguageView: AnyObject {
+    func showMainScreen()
+}
+
+
+
+
 class ChooseLanguageViewController: UIViewController {
-    
+    //MARK: - UI
     var chooseLanguageLabel: UILabel!
     var ukraineLanguageButton: UIButton!
     var englishLanguageButton: UIButton!
     
-    var apiClient: AppData?
-    var words: [OldStyleWord] = []
     
-    init(apiClient: AppDataProtocol) {
-        self.apiClient = apiClient as! AppData
+    //MARK: -
+    private let viewModel: ChooseLanguageViewModel
+    private let coordinator: CoordinatorProtocol
+
+    //MARK: - Lifecycle
+    init(viewModel: ChooseLanguageViewModel, coordinator: CoordinatorProtocol) {
+        self.viewModel = viewModel
+        self.coordinator = coordinator
         super.init(nibName: nil, bundle: nil)
     }
-    
+
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
@@ -34,6 +45,7 @@ class ChooseLanguageViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        viewModel.view = self
         configureUI()
     }
     
@@ -116,29 +128,19 @@ extension ChooseLanguageViewController {
         }
         switch button.tag {
         case 0:
-            print("I loaded with ukraine words")
-            let controller = ViewController()
-            navigationController?.setViewControllers([controller], animated: true)
-            self.loadData()
+            viewModel.setLanguage(.ua)
         case 1:
-            print("I loaded with english words")
-            let controller = ViewController()
-            navigationController?.setViewControllers([controller], animated: true)
-            self.loadData()
+            viewModel.setLanguage(.en)
         default:
             print("aaa nam vsem pizda")
         }
         
         //
     }
-    func loadData() {
-        apiClient?.getWord { [weak self] words, error in
-            if let words = words {
-                self?.words = words
-            } else {
-                assertionFailure("aaa nam vsem pizda choose language")
-            }
-        }
-    }
     
+}
+extension ChooseLanguageViewController: ChooseLanguageView {
+    func showMainScreen() {
+        coordinator.showMainScreen()
+    }
 }

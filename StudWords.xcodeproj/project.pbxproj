@@ -9,21 +9,26 @@
 /* Begin PBXBuildFile section */
 		428E9CAD28E4910E004D43AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E9CAC28E4910E004D43AE /* AppDelegate.swift */; };
 		428E9CAF28E4910E004D43AE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E9CAE28E4910E004D43AE /* SceneDelegate.swift */; };
-		428E9CB128E4910E004D43AE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E9CB028E4910E004D43AE /* ViewController.swift */; };
+		428E9CB128E4910E004D43AE /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E9CB028E4910E004D43AE /* TabViewController.swift */; };
 		428E9CB628E49111004D43AE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 428E9CB528E49111004D43AE /* Assets.xcassets */; };
 		428E9CB928E49111004D43AE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 428E9CB728E49111004D43AE /* LaunchScreen.storyboard */; };
-		428E9CC128E4918A004D43AE /* AppData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E9CC028E4918A004D43AE /* AppData.swift */; };
 		428E9CC428E4920C004D43AE /* NavigationVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E9CC328E4920C004D43AE /* NavigationVC.swift */; };
 		428E9CC828E4A9EE004D43AE /* ChooseLanguageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E9CC728E4A9EE004D43AE /* ChooseLanguageViewController.swift */; };
 		428E9CCB28E5F5C5004D43AE /* Data.json in Resources */ = {isa = PBXBuildFile; fileRef = 428E9CCA28E5F5C5004D43AE /* Data.json */; };
-		428E9CCE28E5F5F4004D43AE /* OldStyleWord.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E9CCD28E5F5F4004D43AE /* OldStyleWord.swift */; };
-		428E9CD128EB07F5004D43AE /* MainViewVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E9CD028EB07F5004D43AE /* MainViewVC.swift */; };
-		428E9CD328EB085A004D43AE /* MainViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E9CD228EB085A004D43AE /* MainViewModel.swift */; };
-		428E9CD628EB0B6F004D43AE /* WordsStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E9CD528EB0B6F004D43AE /* WordsStorage.swift */; };
+		428E9CCE28E5F5F4004D43AE /* Word.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E9CCD28E5F5F4004D43AE /* Word.swift */; };
+		428E9CD128EB07F5004D43AE /* AllWordsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E9CD028EB07F5004D43AE /* AllWordsVC.swift */; };
+		428E9CD328EB085A004D43AE /* AllWordsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E9CD228EB085A004D43AE /* AllWordsViewModel.swift */; };
+		428E9CD628EB0B6F004D43AE /* AppStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E9CD528EB0B6F004D43AE /* AppStorage.swift */; };
 		428E9CD928EB0BB3004D43AE /* WordMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E9CD828EB0BB3004D43AE /* WordMapper.swift */; };
 		428E9CDB28EB0E0A004D43AE /* WordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E9CDA28EB0E0A004D43AE /* WordCell.swift */; };
 		428E9CDE28EB2974004D43AE /* RepeatWordsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E9CDD28EB2974004D43AE /* RepeatWordsVC.swift */; };
 		428E9CE128EC8ED6004D43AE /* AddWordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E9CE028EC8ED6004D43AE /* AddWordVC.swift */; };
+		428E9CE728F0763B004D43AE /* TextFieldWithPadding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E9CE628F0763B004D43AE /* TextFieldWithPadding.swift */; };
+		428E9CE928FD91E7004D43AE /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E9CE828FD91E7004D43AE /* Coordinator.swift */; };
+		428E9CEB28FD9264004D43AE /* Language.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E9CEA28FD9264004D43AE /* Language.swift */; };
+		428E9CED28FD92F7004D43AE /* ChooseLanguageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E9CEC28FD92F7004D43AE /* ChooseLanguageViewModel.swift */; };
+		428E9CEF28FD9536004D43AE /* AddWordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E9CEE28FD9536004D43AE /* AddWordViewModel.swift */; };
+		428E9CF128FD9B80004D43AE /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E9CF028FD9B80004D43AE /* UIViewController+Extensions.swift */; };
 		8B733A0DBFBCD41D1B6400D8 /* Pods_StudWords.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 603DA026ABA8EFD27F40027D /* Pods_StudWords.framework */; };
 /* End PBXBuildFile section */
 
@@ -31,22 +36,27 @@
 		428E9CA928E4910E004D43AE /* StudWords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudWords.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		428E9CAC28E4910E004D43AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		428E9CAE28E4910E004D43AE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		428E9CB028E4910E004D43AE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		428E9CB028E4910E004D43AE /* TabViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewController.swift; sourceTree = "<group>"; };
 		428E9CB528E49111004D43AE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		428E9CB828E49111004D43AE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		428E9CBA28E49111004D43AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		428E9CC028E4918A004D43AE /* AppData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppData.swift; sourceTree = "<group>"; };
 		428E9CC328E4920C004D43AE /* NavigationVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationVC.swift; sourceTree = "<group>"; };
 		428E9CC728E4A9EE004D43AE /* ChooseLanguageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseLanguageViewController.swift; sourceTree = "<group>"; };
 		428E9CCA28E5F5C5004D43AE /* Data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Data.json; sourceTree = "<group>"; };
-		428E9CCD28E5F5F4004D43AE /* OldStyleWord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OldStyleWord.swift; sourceTree = "<group>"; };
-		428E9CD028EB07F5004D43AE /* MainViewVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewVC.swift; sourceTree = "<group>"; };
-		428E9CD228EB085A004D43AE /* MainViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewModel.swift; sourceTree = "<group>"; };
-		428E9CD528EB0B6F004D43AE /* WordsStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordsStorage.swift; sourceTree = "<group>"; };
+		428E9CCD28E5F5F4004D43AE /* Word.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Word.swift; sourceTree = "<group>"; };
+		428E9CD028EB07F5004D43AE /* AllWordsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllWordsVC.swift; sourceTree = "<group>"; };
+		428E9CD228EB085A004D43AE /* AllWordsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllWordsViewModel.swift; sourceTree = "<group>"; };
+		428E9CD528EB0B6F004D43AE /* AppStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppStorage.swift; sourceTree = "<group>"; };
 		428E9CD828EB0BB3004D43AE /* WordMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordMapper.swift; sourceTree = "<group>"; };
 		428E9CDA28EB0E0A004D43AE /* WordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordCell.swift; sourceTree = "<group>"; };
 		428E9CDD28EB2974004D43AE /* RepeatWordsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatWordsVC.swift; sourceTree = "<group>"; };
 		428E9CE028EC8ED6004D43AE /* AddWordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWordVC.swift; sourceTree = "<group>"; };
+		428E9CE628F0763B004D43AE /* TextFieldWithPadding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldWithPadding.swift; sourceTree = "<group>"; };
+		428E9CE828FD91E7004D43AE /* Coordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Coordinator.swift; sourceTree = "<group>"; };
+		428E9CEA28FD9264004D43AE /* Language.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Language.swift; sourceTree = "<group>"; };
+		428E9CEC28FD92F7004D43AE /* ChooseLanguageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseLanguageViewModel.swift; sourceTree = "<group>"; };
+		428E9CEE28FD9536004D43AE /* AddWordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWordViewModel.swift; sourceTree = "<group>"; };
+		428E9CF028FD9B80004D43AE /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
 		603DA026ABA8EFD27F40027D /* Pods_StudWords.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StudWords.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A40467E92F65719C8156E0EA /* Pods-StudWords.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudWords.debug.xcconfig"; path = "Target Support Files/Pods-StudWords/Pods-StudWords.debug.xcconfig"; sourceTree = "<group>"; };
 		E2B32FEA8E109F284028FDCA /* Pods-StudWords.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudWords.release.xcconfig"; path = "Target Support Files/Pods-StudWords/Pods-StudWords.release.xcconfig"; sourceTree = "<group>"; };
@@ -94,8 +104,11 @@
 			isa = PBXGroup;
 			children = (
 				428E9CAC28E4910E004D43AE /* AppDelegate.swift */,
+				428E9CE828FD91E7004D43AE /* Coordinator.swift */,
+				428E9CF028FD9B80004D43AE /* UIViewController+Extensions.swift */,
 				428E9CAE28E4910E004D43AE /* SceneDelegate.swift */,
-				428E9CC028E4918A004D43AE /* AppData.swift */,
+				428E9CD428EB0B5C004D43AE /* Storage */,
+				428E9CE428F075DE004D43AE /* CustomUIBlocks */,
 				428E9CCC28E5F5D7004D43AE /* DataModel */,
 				428E9CC228E491D3004D43AE /* NavigationBar */,
 				428E9CC528E4A9AC004D43AE /* Screens */,
@@ -118,9 +131,7 @@
 		428E9CC528E4A9AC004D43AE /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				428E9CDF28EC8BF4004D43AE /* Addword */,
-				428E9CDC28EB294E004D43AE /* RepeatWords */,
-				428E9CC928E5F4C5004D43AE /* MainScreen */,
+				428E9CC928E5F4C5004D43AE /* TabController */,
 				428E9CC628E4A9BE004D43AE /* ChooseLanguageScreen */,
 			);
 			path = Screens;
@@ -130,43 +141,46 @@
 			isa = PBXGroup;
 			children = (
 				428E9CC728E4A9EE004D43AE /* ChooseLanguageViewController.swift */,
+				428E9CEC28FD92F7004D43AE /* ChooseLanguageViewModel.swift */,
 			);
 			path = ChooseLanguageScreen;
 			sourceTree = "<group>";
 		};
-		428E9CC928E5F4C5004D43AE /* MainScreen */ = {
+		428E9CC928E5F4C5004D43AE /* TabController */ = {
 			isa = PBXGroup;
 			children = (
-				428E9CCF28EB079C004D43AE /* MainViewVC */,
-				428E9CB028E4910E004D43AE /* ViewController.swift */,
+				428E9CDF28EC8BF4004D43AE /* Addword */,
+				428E9CDC28EB294E004D43AE /* RepeatWords */,
+				428E9CCF28EB079C004D43AE /* AllWords */,
+				428E9CB028E4910E004D43AE /* TabViewController.swift */,
 			);
-			path = MainScreen;
+			path = TabController;
 			sourceTree = "<group>";
 		};
 		428E9CCC28E5F5D7004D43AE /* DataModel */ = {
 			isa = PBXGroup;
 			children = (
 				428E9CD728EB0BA3004D43AE /* Mappers */,
-				428E9CD428EB0B5C004D43AE /* Storage */,
-				428E9CCD28E5F5F4004D43AE /* OldStyleWord.swift */,
+				428E9CCD28E5F5F4004D43AE /* Word.swift */,
+				428E9CEA28FD9264004D43AE /* Language.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
 		};
-		428E9CCF28EB079C004D43AE /* MainViewVC */ = {
+		428E9CCF28EB079C004D43AE /* AllWords */ = {
 			isa = PBXGroup;
 			children = (
-				428E9CD028EB07F5004D43AE /* MainViewVC.swift */,
-				428E9CD228EB085A004D43AE /* MainViewModel.swift */,
+				428E9CD028EB07F5004D43AE /* AllWordsVC.swift */,
+				428E9CD228EB085A004D43AE /* AllWordsViewModel.swift */,
 				428E9CDA28EB0E0A004D43AE /* WordCell.swift */,
 			);
-			path = MainViewVC;
+			path = AllWords;
 			sourceTree = "<group>";
 		};
 		428E9CD428EB0B5C004D43AE /* Storage */ = {
 			isa = PBXGroup;
 			children = (
-				428E9CD528EB0B6F004D43AE /* WordsStorage.swift */,
+				428E9CD528EB0B6F004D43AE /* AppStorage.swift */,
 			);
 			path = Storage;
 			sourceTree = "<group>";
@@ -191,8 +205,25 @@
 			isa = PBXGroup;
 			children = (
 				428E9CE028EC8ED6004D43AE /* AddWordVC.swift */,
+				428E9CEE28FD9536004D43AE /* AddWordViewModel.swift */,
 			);
 			path = Addword;
+			sourceTree = "<group>";
+		};
+		428E9CE428F075DE004D43AE /* CustomUIBlocks */ = {
+			isa = PBXGroup;
+			children = (
+				428E9CE528F075FE004D43AE /* UITextField */,
+			);
+			path = CustomUIBlocks;
+			sourceTree = "<group>";
+		};
+		428E9CE528F075FE004D43AE /* UITextField */ = {
+			isa = PBXGroup;
+			children = (
+				428E9CE628F0763B004D43AE /* TextFieldWithPadding.swift */,
+			);
+			path = UITextField;
 			sourceTree = "<group>";
 		};
 		B08FFFDEC2C630B1605B9F62 /* Pods */ = {
@@ -319,20 +350,25 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				428E9CB128E4910E004D43AE /* ViewController.swift in Sources */,
-				428E9CD628EB0B6F004D43AE /* WordsStorage.swift in Sources */,
-				428E9CCE28E5F5F4004D43AE /* OldStyleWord.swift in Sources */,
+				428E9CB128E4910E004D43AE /* TabViewController.swift in Sources */,
+				428E9CD628EB0B6F004D43AE /* AppStorage.swift in Sources */,
+				428E9CE928FD91E7004D43AE /* Coordinator.swift in Sources */,
+				428E9CCE28E5F5F4004D43AE /* Word.swift in Sources */,
+				428E9CED28FD92F7004D43AE /* ChooseLanguageViewModel.swift in Sources */,
 				428E9CDE28EB2974004D43AE /* RepeatWordsVC.swift in Sources */,
+				428E9CF128FD9B80004D43AE /* UIViewController+Extensions.swift in Sources */,
 				428E9CAD28E4910E004D43AE /* AppDelegate.swift in Sources */,
 				428E9CAF28E4910E004D43AE /* SceneDelegate.swift in Sources */,
+				428E9CEF28FD9536004D43AE /* AddWordViewModel.swift in Sources */,
 				428E9CD928EB0BB3004D43AE /* WordMapper.swift in Sources */,
-				428E9CD128EB07F5004D43AE /* MainViewVC.swift in Sources */,
+				428E9CD128EB07F5004D43AE /* AllWordsVC.swift in Sources */,
 				428E9CC828E4A9EE004D43AE /* ChooseLanguageViewController.swift in Sources */,
-				428E9CC128E4918A004D43AE /* AppData.swift in Sources */,
 				428E9CE128EC8ED6004D43AE /* AddWordVC.swift in Sources */,
 				428E9CDB28EB0E0A004D43AE /* WordCell.swift in Sources */,
 				428E9CC428E4920C004D43AE /* NavigationVC.swift in Sources */,
-				428E9CD328EB085A004D43AE /* MainViewModel.swift in Sources */,
+				428E9CEB28FD9264004D43AE /* Language.swift in Sources */,
+				428E9CD328EB085A004D43AE /* AllWordsViewModel.swift in Sources */,
+				428E9CE728F0763B004D43AE /* TextFieldWithPadding.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

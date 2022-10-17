@@ -10,19 +10,16 @@ import UIKit
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
-    var navigationVC: UINavigationController!
+    var coordinator: Coordinator?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-
-        // Override point for customization after application launch.
-        let apiClient = AppData.shared
-        let controller = ChooseLanguageViewController(apiClient: apiClient)
-
-        navigationVC = NavigationVC(rootViewController: controller)
+        coordinator = Coordinator(navigationController: NavigationVC())
 
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = navigationVC
+        window?.rootViewController = coordinator?.rootViewController
         window?.makeKeyAndVisible()
+
+        coordinator?.start()
 
         return true
     }

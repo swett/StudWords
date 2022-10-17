@@ -7,15 +7,16 @@
 
 import UIKit
 
-class MainViewVC: UIViewController {
+class AllWordsVC: UIViewController {
     
-    private var viewModel: MainViewModelProtocol
+    
+    private var viewModel: AllWordsModelProtocol
     
     var wordsTableView: UITableView!
     var indicator: UIActivityIndicatorView!
     
     
-    init(viewModel: MainViewModelProtocol){
+    init(viewModel: AllWordsModelProtocol){
         
         self.viewModel = viewModel
         
@@ -44,7 +45,7 @@ class MainViewVC: UIViewController {
 }
 
 
-private extension MainViewVC {
+private extension AllWordsVC {
     
     func configureTableView() {
         wordsTableView = UITableView().then({ wordsTableView in
@@ -72,7 +73,7 @@ private extension MainViewVC {
     }
 }
 
-extension MainViewVC: UITableViewDataSource {
+extension AllWordsVC: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         viewModel.numberOfRows(in: section)
@@ -85,16 +86,28 @@ extension MainViewVC: UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            // TODO: add word removal
+            // FIXME: esli ne lox
+//            viewModel.remove(at: indexPath.row) {
+//                tableView.deleteRows(at: [indexPath], with: .fade)
+//            }
+        }
+    }
+    
+    
+    
 }
 
-extension MainViewVC: UITableViewDelegate {
+extension AllWordsVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         viewModel.didSelectRow(at: indexPath)
     }
 }
 
 
-extension MainViewVC: MainViewDelegate {
+extension AllWordsVC: AllWordsView {
     
     
     func didChangeLoadingState(isLoading: Bool) {

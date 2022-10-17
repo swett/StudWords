@@ -7,20 +7,51 @@
 
 import UIKit
 
+
+
+protocol AddWordView: AnyObject {
+    func updateValidationState(isValid: Bool)
+    func showError(message: String)
+    func didAddWord()
+}
+
+
+
 class AddWordVC: UIViewController {
+  
+    
     
     
     let maxDimmedAlpha: CGFloat = 0.65
     let defaultHeight: CGFloat = 690
-    
-    
     var bgView: UIView!
     var containerView: UIView!
     var dimmedView: UIView!
     var blurView: UIView!
+    
     var presentTitleLabel: UILabel!
+    
     var addButton: UIButton!
     var closeButton: UIButton!
+    
+    var wordField: TextFieldWithPadding!
+    var descriptionField: TextFieldWithPadding!
+    var synonymField:TextFieldWithPadding!
+    
+    //MARK: Model
+    private let viewModel: AddWordViewModel
+
+    init(viewModel: AddWordViewModel) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    
+    
     
     
     
@@ -34,7 +65,7 @@ class AddWordVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureUI()
-        // Do any additional setup after loading the view.
+        viewModel.view = self
     }
     
     override func viewDidLayoutSubviews() {
@@ -118,21 +149,104 @@ extension AddWordVC {
         })
         
         presentTitleLabel = UILabel().then({ label in
+            bgView.addSubview(label)
             
+            label.text = "NEW WORD"
+            label.numberOfLines = 0
+            label.textColor = .black
+            label.font = .monospacedDigitSystemFont(ofSize: 32, weight: .thin)
+            
+            label.snp.makeConstraints { make in
+                make.top.equalTo(bgView.snp.top).offset(15)
+                make.centerX.equalToSuperview()
+            }
+        })
+        
+        wordField = TextFieldWithPadding().then({ field in
+            bgView.addSubview(field)
+            field.delegate = self
+            field.backgroundColor = .clear
+            field.placeholder = "Input Word"
+            field.layer.cornerRadius = 15
+            field.layer.borderWidth = 1
+            field.layer.borderColor = UIColor.purple.cgColor
+            
+            field.addTarget(self, action: #selector(validateFieldAct), for: .allEditingEvents)
+            
+            field.snp.makeConstraints { make in
+                make.top.equalTo(presentTitleLabel.snp.bottom).offset(20)
+                make.left.right.equalToSuperview().inset(15)
+                make.height.equalTo(60)
+            }
+        })
+        
+        descriptionField = TextFieldWithPadding().then({ field in
+            bgView.addSubview(field)
+            field.delegate = self
+            field.backgroundColor = .clear
+            field.placeholder = "Input description of word"
+            field.layer.cornerRadius = 15
+            field.layer.borderWidth = 1
+            field.layer.borderColor = UIColor.purple.cgColor
+            
+            field.addTarget(self, action: #selector(validateFieldAct), for: .allEditingEvents)
+            
+            field.snp.makeConstraints { make in
+                make.top.equalTo(wordField.snp.bottom).offset(20)
+                make.height.equalTo(60)
+                make.left.right.equalToSuperview().inset(15)
+            }
+        })
+        
+        synonymField = TextFieldWithPadding().then({ field in
+            bgView.addSubview(field)
+            field.delegate = self
+            field.backgroundColor = .clear
+            field.placeholder = "Input synonim of word"
+            field.layer.cornerRadius = 15
+            field.layer.borderWidth = 1
+            field.layer.borderColor = UIColor.purple.cgColor
+            
+            field.addTarget(self, action: #selector(validateFieldAct), for: .allEditingEvents)
+            
+            field.snp.makeConstraints { make in
+                make.top.equalTo(descriptionField.snp.bottom).offset(20)
+                make.height.equalTo(60)
+                make.left.right.equalToSuperview().inset(15)
+            }
         })
         
         addButton = UIButton().then({ button in
             bgView.addSubview(button)
             button.setTitle("Add", for: .normal)
             button.backgroundColor = .purple
+            button.titleLabel?.font = .monospacedDigitSystemFont(ofSize: 18, weight: .light)
+            button.layer.cornerRadius = 15
+            button.alpha = 0
             
+            
+            button.addTarget(self, action: #selector(addWordButton) , for: .touchUpInside)
             button.snp.makeConstraints { make in
-                make.width.equalTo(50)
-                make.height.equalTo(25)
-                make.centerY.equalToSuperview()
+                make.top.equalTo(synonymField.snp.bottom).offset(20)
+                make.width.equalTo(70)
+                make.height.equalTo(35)
+                make.centerX.equalToSuperview()
+//                make.bottom.equalToSuperview().inset(50)
             }
         })
+        setAddButtonState(enabled: false)
         
+    }
+    
+    
+    func setAddButtonState(enabled: Bool) {
+        if enabled {
+            addButton.isEnabled = true
+            addButton.backgroundColor = .purple
+        } else {
+            addButton.isEnabled = false
+            addButton.backgroundColor = .gray
+        }
     }
     
     
@@ -158,6 +272,7 @@ extension AddWordVC {
                 make.bottom.equalToSuperview()
                 make.left.right.equalToSuperview()
             }
+            self.addButton.alpha = 1
             self.view.layoutIfNeeded()
         }
         
@@ -186,14 +301,56 @@ extension AddWordVC {
         }
         
     }
+
+}
+
+//MARK: Actions
+extension AddWordVC {
     @objc func buttonTapped(sender: UIButton) {
         print("tapped")
         animateDismissView()
     }
+    @objc func addWordButton(){
+        UIView.animate(withDuration: 0.15) {
+            self.addButton.transform = .init(scaleX: 0.95, y: 0.95)
+        } completion: { com in
+            UIView.animate(withDuration: 0.1) {
+                self.addButton.transform = .identity
+            }
+        }
+        viewModel.addWord(
+            text: wordField.text!,
+            description: descriptionField.text!,
+            synonim: synonymField.text!
+        )
+    }
+    @objc func validateFieldAct() {
+        viewModel.validateWord(
+            text: wordField.text,
+            description: descriptionField.text,
+            synonim: synonymField.text
+        )
+    }
 }
 
 
+extension AddWordVC: UITextFieldDelegate {
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        switch textField {
+        case wordField:
+            descriptionField.becomeFirstResponder()
+        case descriptionField:
+            synonymField.becomeFirstResponder()
+        case synonymField:
+            synonymField.resignFirstResponder()
+        default:
+            break
+        }
+    }
+}
+
 extension UIView {
+    
     func addBlurredBackground(style: UIBlurEffect.Style) {
         let blurEffect = UIBlurEffect(style: style)
         let blurView = UIVisualEffectView(effect: blurEffect)
@@ -201,5 +358,19 @@ extension UIView {
         blurView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         self.addSubview(blurView)
         self.sendSubviewToBack(blurView)
+    }
+}
+
+extension AddWordVC: AddWordView {
+    func updateValidationState(isValid: Bool) {
+        setAddButtonState(enabled: isValid)
+    }
+
+    func showError(message: String) {
+        showAlert(message: message)
+    }
+
+    func didAddWord() {
+        dismiss(animated: true)
     }
 }
