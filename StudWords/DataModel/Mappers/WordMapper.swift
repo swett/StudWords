@@ -14,4 +14,11 @@ enum WordMapper {
             translation: ""
         )
     }
+    
+    static func mapToFullWord(word:Word) -> FullWordModel {
+        FullWordModel(
+            text: word.text,
+            synonym: word.synonym,
+            meaning: word.meaning)
+    }
 }

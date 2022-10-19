@@ -18,7 +18,7 @@ protocol AllWordsModelProtocol {
     func viewDidAppear()
     func numberOfRows(in section: Int) -> Int
     func model(at indexPath: IndexPath) -> WordViewModel
-    func didSelectRow(at indexPath: IndexPath)
+    func didSelectRow(at indexPath: IndexPath) -> FullWordModel
 }
 
 
@@ -67,8 +67,10 @@ extension AllWordsViewModel: AllWordsModelProtocol {
         
     }
     
-    func didSelectRow(at indexPath: IndexPath) {
+    func didSelectRow(at indexPath: IndexPath)-> FullWordModel {
         let model = words[indexPath.row]
+        
+        return WordMapper.mapToFullWord(word: model)
     }
     
     

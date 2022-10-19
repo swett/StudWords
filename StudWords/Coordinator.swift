@@ -16,6 +16,8 @@ protocol CoordinatorProtocol {
 
     func showAddWordScreen()
     func didAddWord()
+    
+    func showFullWordScreen(word: FullWordModel)
 }
 
 final class Coordinator {
@@ -45,7 +47,7 @@ extension Coordinator: CoordinatorProtocol {
         let tabController = TabViewController(coordinator: self)
 
         let viewModel = AllWordsViewModel(storage: AppStorage.shared)
-        let allWordsController = AllWordsVC(viewModel: viewModel)
+        let allWordsController = AllWordsVC(viewModel: viewModel, coordinator: self)
 
         let repeatWordsController = RepeatWordsVC()
         let centerController = UIViewController()
@@ -71,6 +73,12 @@ extension Coordinator: CoordinatorProtocol {
 
     func didAddWord() {
         tabController?.presentedViewController?.dismiss(animated: true)
+    }
+    
+    func showFullWordScreen(word: FullWordModel) {
+        let viewModel = DetailWordViewModel(word: word)
+        let fullWordVC = DetailWordVC(viewModel: viewModel, coordinator: self)
+        navigationController.pushViewController(fullWordVC, animated: true)
     }
 }
 

@@ -11,15 +11,16 @@ class AllWordsVC: UIViewController {
     
     
     private var viewModel: AllWordsModelProtocol
+    private let coordinator: CoordinatorProtocol
     
     var wordsTableView: UITableView!
     var indicator: UIActivityIndicatorView!
     
     
-    init(viewModel: AllWordsModelProtocol){
+    init(viewModel: AllWordsModelProtocol, coordinator: CoordinatorProtocol){
         
         self.viewModel = viewModel
-        
+        self.coordinator = coordinator
         super.init(nibName: nil, bundle: nil)
         self.viewModel.delegate = self
     }
@@ -50,7 +51,7 @@ private extension AllWordsVC {
     func configureTableView() {
         wordsTableView = UITableView().then({ wordsTableView in
             view.addSubview(wordsTableView)
-            wordsTableView.backgroundColor = UIColor(named: "YellowColor")
+            wordsTableView.backgroundColor = .mainBgColor
             wordsTableView.register(WordCell.self, forCellReuseIdentifier: WordCell.id)
             wordsTableView.dataSource = self
             wordsTableView.delegate = self
@@ -102,7 +103,8 @@ extension AllWordsVC: UITableViewDataSource {
 
 extension AllWordsVC: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        viewModel.didSelectRow(at: indexPath)
+       let model =  viewModel.didSelectRow(at: indexPath)
+        coordinator.showFullWordScreen(word: model)
     }
 }
 

@@ -11,7 +11,7 @@ class RepeatWordsVC: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .purple
+        view.backgroundColor = .mainBgColor
         // Do any additional setup after loading the view.
     }
     

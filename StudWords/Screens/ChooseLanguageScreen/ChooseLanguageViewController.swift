@@ -59,14 +59,14 @@ extension ChooseLanguageViewController {
     
     
     func configureUI() {
-        view.backgroundColor = UIColor(named: "CyanColorBG")
+        view.backgroundColor = .mainBgColor
         chooseLanguageLabel = UILabel().then({ label in
             view.addSubview(label)
             label.text = "Choose language"
             label.font = .monospacedDigitSystemFont(ofSize: 40, weight: .light)
             label.numberOfLines = 0
             label.textAlignment = .left
-            label.textColor = .white
+            label.textColor = .mainTextColor
             label.snp.makeConstraints { make in
                 make.top.equalTo(view.safeAreaLayoutGuide).offset(150)
                 make.centerX.equalToSuperview()

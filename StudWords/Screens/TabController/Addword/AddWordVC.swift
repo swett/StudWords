@@ -122,7 +122,7 @@ extension AddWordVC {
         
         closeButton = UIButton().then({ button in
             containerView.addSubview(button)
-            button.backgroundColor = .purple
+            button.backgroundColor = .mainButtonColor
             button.setTitle("X", for: .normal)
             button.titleLabel?.font = UIFont.monospacedSystemFont(ofSize: 18, weight: .thin)
             button.addTarget(self, action:#selector(buttonTapped(sender:)) , for: .touchUpInside)
@@ -138,7 +138,7 @@ extension AddWordVC {
         bgView = UIView().then({ bg in
             containerView.addSubview(bg)
             bg.layer.cornerRadius = 10
-            bg.backgroundColor = .white
+            bg.backgroundColor = .mainBgColor
             bg.snp.makeConstraints { make in
                 make.top.equalTo(containerView.snp.top).offset(10)
                 make.left.right.equalToSuperview()
@@ -153,7 +153,7 @@ extension AddWordVC {
             
             label.text = "NEW WORD"
             label.numberOfLines = 0
-            label.textColor = .black
+            label.textColor = .mainTextColor
             label.font = .monospacedDigitSystemFont(ofSize: 32, weight: .thin)
             
             label.snp.makeConstraints { make in
@@ -169,7 +169,7 @@ extension AddWordVC {
             field.placeholder = "Input Word"
             field.layer.cornerRadius = 15
             field.layer.borderWidth = 1
-            field.layer.borderColor = UIColor.purple.cgColor
+            field.layer.borderColor = UIColor.mainDetailsColor.cgColor
             
             field.addTarget(self, action: #selector(validateFieldAct), for: .allEditingEvents)
             
@@ -187,7 +187,7 @@ extension AddWordVC {
             field.placeholder = "Input description of word"
             field.layer.cornerRadius = 15
             field.layer.borderWidth = 1
-            field.layer.borderColor = UIColor.purple.cgColor
+            field.layer.borderColor = UIColor.mainDetailsColor.cgColor
             
             field.addTarget(self, action: #selector(validateFieldAct), for: .allEditingEvents)
             
@@ -205,7 +205,7 @@ extension AddWordVC {
             field.placeholder = "Input synonim of word"
             field.layer.cornerRadius = 15
             field.layer.borderWidth = 1
-            field.layer.borderColor = UIColor.purple.cgColor
+            field.layer.borderColor = UIColor.mainDetailsColor.cgColor
             
             field.addTarget(self, action: #selector(validateFieldAct), for: .allEditingEvents)
             
@@ -219,7 +219,7 @@ extension AddWordVC {
         addButton = UIButton().then({ button in
             bgView.addSubview(button)
             button.setTitle("Add", for: .normal)
-            button.backgroundColor = .purple
+            button.backgroundColor = .mainButtonColor
             button.titleLabel?.font = .monospacedDigitSystemFont(ofSize: 18, weight: .light)
             button.layer.cornerRadius = 15
             button.alpha = 0
@@ -242,10 +242,10 @@ extension AddWordVC {
     func setAddButtonState(enabled: Bool) {
         if enabled {
             addButton.isEnabled = true
-            addButton.backgroundColor = .purple
+            addButton.backgroundColor = .mainButtonColor
         } else {
             addButton.isEnabled = false
-            addButton.backgroundColor = .gray
+            addButton.backgroundColor = .mainDescriptionColor
         }
     }
     

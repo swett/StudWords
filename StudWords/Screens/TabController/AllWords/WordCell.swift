@@ -26,7 +26,7 @@ class WordCell: UITableViewCell {
 
 private extension WordCell {
     func configureUI() {
-        contentView.backgroundColor = UIColor(named: "YellowColor")
+        contentView.backgroundColor = .mainBgColor
         containerView = UIView().then({ container in
             contentView.addSubview(container)
             //            container.backgroundColor = UIColor(named: "YellowColor")
@@ -40,6 +40,7 @@ private extension WordCell {
         titleLabel = UILabel().then({ label in
             containerView.addSubview(label)
             label.backgroundColor = .clear
+            label.textColor = .mainTextColor
             label.snp.makeConstraints { make in
                 
                 make.edges.equalToSuperview()

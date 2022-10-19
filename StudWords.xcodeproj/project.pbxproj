@@ -29,6 +29,10 @@
 		428E9CED28FD92F7004D43AE /* ChooseLanguageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E9CEC28FD92F7004D43AE /* ChooseLanguageViewModel.swift */; };
 		428E9CEF28FD9536004D43AE /* AddWordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E9CEE28FD9536004D43AE /* AddWordViewModel.swift */; };
 		428E9CF128FD9B80004D43AE /* UIViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E9CF028FD9B80004D43AE /* UIViewController+Extensions.swift */; };
+		428E9CF428FF188F004D43AE /* DetailWordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E9CF328FF188F004D43AE /* DetailWordVC.swift */; };
+		428E9CF628FF189E004D43AE /* DetailWordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E9CF528FF189E004D43AE /* DetailWordViewModel.swift */; };
+		428E9CFA29004C16004D43AE /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E9CF929004C16004D43AE /* UIColorExtension.swift */; };
+		428E9D0029006610004D43AE /* Calligraffitti-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 428E9CFF29006610004D43AE /* Calligraffitti-Regular.ttf */; };
 		8B733A0DBFBCD41D1B6400D8 /* Pods_StudWords.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 603DA026ABA8EFD27F40027D /* Pods_StudWords.framework */; };
 /* End PBXBuildFile section */
 
@@ -57,6 +61,10 @@
 		428E9CEC28FD92F7004D43AE /* ChooseLanguageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseLanguageViewModel.swift; sourceTree = "<group>"; };
 		428E9CEE28FD9536004D43AE /* AddWordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWordViewModel.swift; sourceTree = "<group>"; };
 		428E9CF028FD9B80004D43AE /* UIViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extensions.swift"; sourceTree = "<group>"; };
+		428E9CF328FF188F004D43AE /* DetailWordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWordVC.swift; sourceTree = "<group>"; };
+		428E9CF528FF189E004D43AE /* DetailWordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWordViewModel.swift; sourceTree = "<group>"; };
+		428E9CF929004C16004D43AE /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		428E9CFF29006610004D43AE /* Calligraffitti-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Calligraffitti-Regular.ttf"; sourceTree = "<group>"; };
 		603DA026ABA8EFD27F40027D /* Pods_StudWords.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StudWords.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A40467E92F65719C8156E0EA /* Pods-StudWords.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudWords.debug.xcconfig"; path = "Target Support Files/Pods-StudWords/Pods-StudWords.debug.xcconfig"; sourceTree = "<group>"; };
 		E2B32FEA8E109F284028FDCA /* Pods-StudWords.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudWords.release.xcconfig"; path = "Target Support Files/Pods-StudWords/Pods-StudWords.release.xcconfig"; sourceTree = "<group>"; };
@@ -107,14 +115,13 @@
 				428E9CE828FD91E7004D43AE /* Coordinator.swift */,
 				428E9CF028FD9B80004D43AE /* UIViewController+Extensions.swift */,
 				428E9CAE28E4910E004D43AE /* SceneDelegate.swift */,
+				428E9CF729004C00004D43AE /* Helpers */,
 				428E9CD428EB0B5C004D43AE /* Storage */,
 				428E9CE428F075DE004D43AE /* CustomUIBlocks */,
 				428E9CCC28E5F5D7004D43AE /* DataModel */,
 				428E9CC228E491D3004D43AE /* NavigationBar */,
 				428E9CC528E4A9AC004D43AE /* Screens */,
-				428E9CB528E49111004D43AE /* Assets.xcassets */,
-				428E9CB728E49111004D43AE /* LaunchScreen.storyboard */,
-				428E9CCA28E5F5C5004D43AE /* Data.json */,
+				428E9CFB29004C3A004D43AE /* Assets */,
 				428E9CBA28E49111004D43AE /* Info.plist */,
 			);
 			path = StudWords;
@@ -131,6 +138,7 @@
 		428E9CC528E4A9AC004D43AE /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				428E9CF228FF1853004D43AE /* FullWord */,
 				428E9CC928E5F4C5004D43AE /* TabController */,
 				428E9CC628E4A9BE004D43AE /* ChooseLanguageScreen */,
 			);
@@ -226,6 +234,50 @@
 			path = UITextField;
 			sourceTree = "<group>";
 		};
+		428E9CF228FF1853004D43AE /* FullWord */ = {
+			isa = PBXGroup;
+			children = (
+				428E9CF328FF188F004D43AE /* DetailWordVC.swift */,
+				428E9CF528FF189E004D43AE /* DetailWordViewModel.swift */,
+			);
+			path = FullWord;
+			sourceTree = "<group>";
+		};
+		428E9CF729004C00004D43AE /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				428E9CF829004C07004D43AE /* Color */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		428E9CF829004C07004D43AE /* Color */ = {
+			isa = PBXGroup;
+			children = (
+				428E9CF929004C16004D43AE /* UIColorExtension.swift */,
+			);
+			path = Color;
+			sourceTree = "<group>";
+		};
+		428E9CFB29004C3A004D43AE /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				428E9CFC29005FBD004D43AE /* Font */,
+				428E9CCA28E5F5C5004D43AE /* Data.json */,
+				428E9CB728E49111004D43AE /* LaunchScreen.storyboard */,
+				428E9CB528E49111004D43AE /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		428E9CFC29005FBD004D43AE /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				428E9CFF29006610004D43AE /* Calligraffitti-Regular.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
 		B08FFFDEC2C630B1605B9F62 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -297,6 +349,7 @@
 			files = (
 				428E9CB928E49111004D43AE /* LaunchScreen.storyboard in Resources */,
 				428E9CB628E49111004D43AE /* Assets.xcassets in Resources */,
+				428E9D0029006610004D43AE /* Calligraffitti-Regular.ttf in Resources */,
 				428E9CCB28E5F5C5004D43AE /* Data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -361,12 +414,15 @@
 				428E9CAF28E4910E004D43AE /* SceneDelegate.swift in Sources */,
 				428E9CEF28FD9536004D43AE /* AddWordViewModel.swift in Sources */,
 				428E9CD928EB0BB3004D43AE /* WordMapper.swift in Sources */,
+				428E9CF628FF189E004D43AE /* DetailWordViewModel.swift in Sources */,
+				428E9CF428FF188F004D43AE /* DetailWordVC.swift in Sources */,
 				428E9CD128EB07F5004D43AE /* AllWordsVC.swift in Sources */,
 				428E9CC828E4A9EE004D43AE /* ChooseLanguageViewController.swift in Sources */,
 				428E9CE128EC8ED6004D43AE /* AddWordVC.swift in Sources */,
 				428E9CDB28EB0E0A004D43AE /* WordCell.swift in Sources */,
 				428E9CC428E4920C004D43AE /* NavigationVC.swift in Sources */,
 				428E9CEB28FD9264004D43AE /* Language.swift in Sources */,
+				428E9CFA29004C16004D43AE /* UIColorExtension.swift in Sources */,
 				428E9CD328EB085A004D43AE /* AllWordsViewModel.swift in Sources */,
 				428E9CE728F0763B004D43AE /* TextFieldWithPadding.swift in Sources */,
 			);

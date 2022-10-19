@@ -51,7 +51,7 @@ extension TabViewController {
             self.view.addSubview(tabBarView)
             
             tabBarView.frame = tabBar.frame
-            tabBarView.backgroundColor = .purple
+            tabBarView.backgroundColor = .mainDescriptionColor
             tabBarView.layer.cornerRadius = 30
             tabBarView.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
             tabBarView.layer.masksToBounds = false
@@ -70,7 +70,7 @@ extension TabViewController {
             customTabBarView.addSubview(button)
             button.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
             let image = UIImage(systemName: "plus.circle.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 44, weight: .light))
-            button.tintColor = .white
+            button.tintColor = .mainDetailsColor
             button.setImage(image, for: .normal)
             
             button.addTarget(self, action: #selector(self.presentAddWord(sender:)) , for: .touchUpInside)
@@ -87,7 +87,8 @@ extension TabViewController {
             customTabBarView.addSubview(button)
             button.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
             //            let image = UIImage(systemName: "plus.circle.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 44, weight: .light))
-            button.tintColor = .white
+            button.tintColor = .mainDetailsColor
+            button.setTitleColor(.mainDetailsColor, for: .normal)
             button.tag = 0
             //            button.setImage(image, for: .normal)
             button.setTitle("repeat", for: .normal)
@@ -105,7 +106,8 @@ extension TabViewController {
             button.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
             
             //            let image = UIImage(systemName: "plus.circle.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 44, weight: .light))
-            button.tintColor = .white
+            button.tintColor = .mainButtonColor
+            button.setTitleColor(.mainDetailsColor, for: .normal)
             button.tag = 2
             //            button.setImage(image, for: .normal)
             button.setTitle("show All", for: .normal)
