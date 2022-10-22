@@ -85,38 +85,40 @@ extension TabViewController {
         showRepeatWordsButton = UIButton(type: .custom).then({ button in
             
             customTabBarView.addSubview(button)
-            button.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
-            //            let image = UIImage(systemName: "plus.circle.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 44, weight: .light))
+//            button.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
+                        let image = UIImage(systemName: "goforward", withConfiguration: UIImage.SymbolConfiguration(pointSize: 25, weight: .light))
             button.tintColor = .mainDetailsColor
             button.setTitleColor(.mainDetailsColor, for: .normal)
             button.tag = 0
-            //            button.setImage(image, for: .normal)
+            button.setImage(image, for: .normal)
             button.setTitle("repeat", for: .normal)
+            button.alignVertical()
             button.addTarget(self, action: #selector(changeScreen(sender:)) , for: .touchUpInside)
             
             button.snp.makeConstraints { make in
-                make.top.equalTo(customTabBarView.snp.top)
+                make.top.equalTo(customTabBarView.snp.top).offset(10)
                 make.left.equalToSuperview().inset(25)
-                make.bottom.equalTo(view.safeAreaInsets).inset(10)
+                make.height.width.equalTo(60)
+//                make.bottom.equalTo(view.safeAreaInsets).inset(10)
             }
         })
         
         showAllWordsButton = UIButton(type: .custom).then({ button in
             customTabBarView.addSubview(button)
-            button.frame = CGRect(x: 0, y: 0, width: 44, height: 44)
-            
-            //            let image = UIImage(systemName: "plus.circle.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 44, weight: .light))
-            button.tintColor = .mainButtonColor
+            let image = UIImage(systemName: "book.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 25, weight: .light))
+            button.tintColor = .mainDetailsColor
             button.setTitleColor(.mainDetailsColor, for: .normal)
             button.tag = 2
-            //            button.setImage(image, for: .normal)
+            button.setImage(image, for: .normal)
             button.setTitle("show All", for: .normal)
+            button.alignVertical()
             button.addTarget(self, action: #selector(changeScreen(sender:)) , for: .touchUpInside)
             
             button.snp.makeConstraints { make in
-                make.top.equalTo(customTabBarView.snp.top)
+                make.top.equalTo(customTabBarView.snp.top).offset(10)
                 make.right.equalToSuperview().inset(25)
-                make.bottom.equalTo(view.safeAreaInsets).inset(10)
+                make.height.equalTo(60)
+                make.width.equalTo(80)
             }
         })
         
@@ -126,10 +128,30 @@ extension TabViewController {
     
     
     @objc func presentAddWord(sender: UIButton) {
+        
+        UIView.animate(withDuration: 0.15) {
+            self.wordAddButton.transform = .init(scaleX: 0.85, y: 0.85)
+        } completion: { com in
+            UIView.animate(withDuration: 0.1) {
+                self.wordAddButton.transform = .identity
+            }
+        }
+        
+        
         coordinator.showAddWordScreen()
     }
     
     @objc func changeScreen(sender: UIButton) {
+        
+        UIView.animate(withDuration: 0.15) {
+            sender.transform = .init(scaleX: 0.85, y: 0.85)
+        } completion: { com in
+            UIView.animate(withDuration: 0.15) {
+                sender.transform = .identity
+            }
+            
+        }
+        
         
         switch sender.tag {
         case 0 : self.selectedIndex = 0

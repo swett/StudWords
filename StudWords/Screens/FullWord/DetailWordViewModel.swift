@@ -26,7 +26,6 @@ final class DetailWordViewModel {
     
     init(word: FullWordModel) {
         self.word = word
-        print(word)
     }
 }
 

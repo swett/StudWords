@@ -307,7 +307,14 @@ extension AddWordVC {
 //MARK: Actions
 extension AddWordVC {
     @objc func buttonTapped(sender: UIButton) {
-        print("tapped")
+        UIView.animate(withDuration: 0.15) {
+            self.closeButton.transform = .init(scaleX: 0.85, y: 0.85)
+        } completion: { com in
+            UIView.animate(withDuration: 0.1) {
+                self.closeButton.transform = .identity
+            }
+        }
+        
         animateDismissView()
     }
     @objc func addWordButton(){

@@ -11,6 +11,8 @@ class DetailWordVC: UIViewController {
 
     //MARK: UI
     
+    
+    
     var wordLabel: UILabel!
     var wordText: UILabel!
     
@@ -57,11 +59,17 @@ extension DetailWordVC {
     
     func setupUI() {
         
+        
+        
+        
         wordLabel = UILabel().then({ label in
             view.addSubview(label)
             label.textColor = .mainTextColor
-            label.font = UIFont(name: "Calligraffitti-Regular", size: 40)
+            label.font = UIFont(name: "Calligraffitti-Regular", size: 30)
             label.text = "Word Detail"
+            label.numberOfLines = 0
+            label.textAlignment = .left
+            
             label.snp.makeConstraints { make in
                 make.top.equalTo(view.safeAreaLayoutGuide).offset(30)
                 make.left.equalToSuperview().inset(30)
@@ -72,9 +80,27 @@ extension DetailWordVC {
         wordText = UILabel().then({ label in
             view.addSubview(label)
             label.textColor = .mainTextColor
-            label.font = UIFont(name: "Calligraffitti-Regular", size: 30)
+            label.font = UIFont(name: "Calligraffitti-Regular", size: 22)
+            label.numberOfLines = 0
+            label.textAlignment = .left
+            
             label.snp.makeConstraints { make in
                 make.top.equalTo(wordLabel.snp.bottom).offset(10)
+                make.left.equalToSuperview().inset(30)
+            }
+        })
+        
+        
+        meaningLabel = UILabel().then({ label in
+            view.addSubview(label)
+            label.textColor = .mainTextColor
+            label.font = UIFont(name: "Calligraffitti-Regular", size: 30)
+            label.text = "Meaning"
+            label.numberOfLines = 0
+            label.textAlignment = .left
+            
+            label.snp.makeConstraints { make in
+                make.top.equalTo(wordText.snp.bottom).offset(30)
                 make.left.equalToSuperview().inset(30)
             }
         })
@@ -83,11 +109,26 @@ extension DetailWordVC {
             view.addSubview(label)
             
             label.textColor = .mainTextColor
-            label.font = .monospacedSystemFont(ofSize: 25, weight: .medium)
-            
+            label.font = UIFont(name: "Calligraffitti-Regular", size: 22)
+            label.numberOfLines = 0
+            label.textAlignment = .left
             
             label.snp.makeConstraints { make in
-                make.top.equalTo(wordText.snp.bottom).offset(50)
+                make.top.equalTo(meaningLabel.snp.bottom).offset(15)
+                make.left.equalToSuperview().inset(30)
+            }
+        })
+        
+        synonimLabel = UILabel().then({ label in
+            view.addSubview(label)
+            label.textColor = .mainTextColor
+            label.font = UIFont(name: "Calligraffitti-Regular", size: 30)
+            label.text = "Synonims"
+            label.numberOfLines = 0
+            label.textAlignment = .left
+            
+            label.snp.makeConstraints { make in
+                make.top.equalTo(meaningText.snp.bottom).offset(30)
                 make.left.equalToSuperview().inset(30)
             }
         })
@@ -95,10 +136,12 @@ extension DetailWordVC {
         synonimText = UILabel().then({ label in
             view.addSubview(label)
             label.textColor = .mainTextColor
-            label.font = .monospacedSystemFont(ofSize: 25, weight: .medium)
+            label.font = UIFont(name: "Calligraffitti-Regular", size: 22)
+            label.numberOfLines = 0
+            label.textAlignment = .left
             
             label.snp.makeConstraints { make in
-                make.top.equalTo(meaningText.snp.bottom).offset(50)
+                make.top.equalTo(synonimLabel.snp.bottom).offset(15)
                 make.left.equalToSuperview().inset(30)
             }
         })
@@ -115,6 +158,7 @@ extension DetailWordVC {
     func load(with word: FullWordModel) {
         wordText.text = word.text
         meaningText.text = word.meaning
+        synonimText.text = "\(word.synonym.joined())\n"
     }
 }
 

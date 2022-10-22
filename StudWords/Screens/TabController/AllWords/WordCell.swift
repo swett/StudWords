@@ -29,9 +29,15 @@ private extension WordCell {
         contentView.backgroundColor = .mainBgColor
         containerView = UIView().then({ container in
             contentView.addSubview(container)
-            //            container.backgroundColor = UIColor(named: "YellowColor")
+            
+            container.layer.cornerRadius = 10
+            container.layer.borderWidth = 0.3
+            container.layer.borderColor = UIColor.mainDetailsColor.cgColor
+            
+            
             container.snp.makeConstraints { make in
-                make.top.left.right.equalToSuperview()
+                make.top.equalToSuperview()
+                make.left.right.equalToSuperview().inset(10)
                 make.height.equalTo(60)
                 make.bottom.equalToSuperview().inset(10)
             }
@@ -41,10 +47,13 @@ private extension WordCell {
             containerView.addSubview(label)
             label.backgroundColor = .clear
             label.textColor = .mainTextColor
+            
+            label.font = UIFont(name: "Calligraffitti-Regular", size: 22)
+            
             label.snp.makeConstraints { make in
                 
-                make.edges.equalToSuperview()
-                
+                make.centerY.equalToSuperview()
+                make.left.equalToSuperview().inset(15)
             }
         })
     }

@@ -33,6 +33,7 @@
 		428E9CF628FF189E004D43AE /* DetailWordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E9CF528FF189E004D43AE /* DetailWordViewModel.swift */; };
 		428E9CFA29004C16004D43AE /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E9CF929004C16004D43AE /* UIColorExtension.swift */; };
 		428E9D0029006610004D43AE /* Calligraffitti-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 428E9CFF29006610004D43AE /* Calligraffitti-Regular.ttf */; };
+		428E9D0329043675004D43AE /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E9D0229043674004D43AE /* UIButtonExtension.swift */; };
 		8B733A0DBFBCD41D1B6400D8 /* Pods_StudWords.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 603DA026ABA8EFD27F40027D /* Pods_StudWords.framework */; };
 /* End PBXBuildFile section */
 
@@ -65,6 +66,7 @@
 		428E9CF528FF189E004D43AE /* DetailWordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWordViewModel.swift; sourceTree = "<group>"; };
 		428E9CF929004C16004D43AE /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		428E9CFF29006610004D43AE /* Calligraffitti-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Calligraffitti-Regular.ttf"; sourceTree = "<group>"; };
+		428E9D0229043674004D43AE /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		603DA026ABA8EFD27F40027D /* Pods_StudWords.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StudWords.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A40467E92F65719C8156E0EA /* Pods-StudWords.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudWords.debug.xcconfig"; path = "Target Support Files/Pods-StudWords/Pods-StudWords.debug.xcconfig"; sourceTree = "<group>"; };
 		E2B32FEA8E109F284028FDCA /* Pods-StudWords.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-StudWords.release.xcconfig"; path = "Target Support Files/Pods-StudWords/Pods-StudWords.release.xcconfig"; sourceTree = "<group>"; };
@@ -246,6 +248,7 @@
 		428E9CF729004C00004D43AE /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				428E9D012904365D004D43AE /* Button */,
 				428E9CF829004C07004D43AE /* Color */,
 			);
 			path = Helpers;
@@ -276,6 +279,14 @@
 				428E9CFF29006610004D43AE /* Calligraffitti-Regular.ttf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		428E9D012904365D004D43AE /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				428E9D0229043674004D43AE /* UIButtonExtension.swift */,
+			);
+			path = Button;
 			sourceTree = "<group>";
 		};
 		B08FFFDEC2C630B1605B9F62 /* Pods */ = {
@@ -410,6 +421,7 @@
 				428E9CED28FD92F7004D43AE /* ChooseLanguageViewModel.swift in Sources */,
 				428E9CDE28EB2974004D43AE /* RepeatWordsVC.swift in Sources */,
 				428E9CF128FD9B80004D43AE /* UIViewController+Extensions.swift in Sources */,
+				428E9D0329043675004D43AE /* UIButtonExtension.swift in Sources */,
 				428E9CAD28E4910E004D43AE /* AppDelegate.swift in Sources */,
 				428E9CAF28E4910E004D43AE /* SceneDelegate.swift in Sources */,
 				428E9CEF28FD9536004D43AE /* AddWordViewModel.swift in Sources */,
