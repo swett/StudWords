@@ -49,7 +49,7 @@ extension Coordinator: CoordinatorProtocol {
         let viewModel = AllWordsViewModel(storage: AppStorage.shared)
         let allWordsController = AllWordsVC(viewModel: viewModel, coordinator: self)
 
-        let repeatWordsController = RepeatWordsVC()
+        let repeatWordsController = RepeatWordsVC(coordinator: self)
         let centerController = UIViewController()
 
         tabController.setViewControllers(
