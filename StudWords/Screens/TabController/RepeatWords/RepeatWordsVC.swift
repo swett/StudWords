@@ -73,6 +73,8 @@ extension RepeatWordsVC: UITableViewDataSource {
 }
 
 extension RepeatWordsVC: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        coordinator.showFlashCardScreen()
+    }
 }
 

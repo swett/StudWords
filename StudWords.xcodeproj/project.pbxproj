@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4252E18C29097968000BED6C /* FlashCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4252E18B29097968000BED6C /* FlashCardVC.swift */; };
+		4252E18E29097C15000BED6C /* FlashCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4252E18D29097C15000BED6C /* FlashCardView.swift */; };
+		4252E190290988C2000BED6C /* FlashCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4252E18F290988C2000BED6C /* FlashCardViewModel.swift */; };
 		428E9CAD28E4910E004D43AE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E9CAC28E4910E004D43AE /* AppDelegate.swift */; };
 		428E9CAF28E4910E004D43AE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E9CAE28E4910E004D43AE /* SceneDelegate.swift */; };
 		428E9CB128E4910E004D43AE /* TabViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E9CB028E4910E004D43AE /* TabViewController.swift */; };
@@ -34,12 +37,18 @@
 		428E9CFA29004C16004D43AE /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E9CF929004C16004D43AE /* UIColorExtension.swift */; };
 		428E9D0029006610004D43AE /* Calligraffitti-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 428E9CFF29006610004D43AE /* Calligraffitti-Regular.ttf */; };
 		428E9D0329043675004D43AE /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E9D0229043674004D43AE /* UIButtonExtension.swift */; };
+		42BA52E2290AA6C900A764B6 /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BA52E1290AA6C900A764B6 /* Quiz.swift */; };
+		42BA52E5291025C600A764B6 /* PassableUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BA52E4291025C600A764B6 /* PassableUIButton.swift */; };
+		42BA52E829102E0800A764B6 /* FinishScreenView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BA52E729102E0800A764B6 /* FinishScreenView.swift */; };
 		42FDEA862908480200E80C44 /* RepeatWordsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FDEA852908480200E80C44 /* RepeatWordsViewModel.swift */; };
 		42FDEA8829084A9300E80C44 /* RepeatWordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42FDEA8729084A9300E80C44 /* RepeatWordCell.swift */; };
 		8B733A0DBFBCD41D1B6400D8 /* Pods_StudWords.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 603DA026ABA8EFD27F40027D /* Pods_StudWords.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4252E18B29097968000BED6C /* FlashCardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardVC.swift; sourceTree = "<group>"; };
+		4252E18D29097C15000BED6C /* FlashCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardView.swift; sourceTree = "<group>"; };
+		4252E18F290988C2000BED6C /* FlashCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardViewModel.swift; sourceTree = "<group>"; };
 		428E9CA928E4910E004D43AE /* StudWords.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StudWords.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		428E9CAC28E4910E004D43AE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		428E9CAE28E4910E004D43AE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -69,6 +78,9 @@
 		428E9CF929004C16004D43AE /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		428E9CFF29006610004D43AE /* Calligraffitti-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Calligraffitti-Regular.ttf"; sourceTree = "<group>"; };
 		428E9D0229043674004D43AE /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
+		42BA52E1290AA6C900A764B6 /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
+		42BA52E4291025C600A764B6 /* PassableUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassableUIButton.swift; sourceTree = "<group>"; };
+		42BA52E729102E0800A764B6 /* FinishScreenView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FinishScreenView.swift; sourceTree = "<group>"; };
 		42FDEA852908480200E80C44 /* RepeatWordsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatWordsViewModel.swift; sourceTree = "<group>"; };
 		42FDEA8729084A9300E80C44 /* RepeatWordCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RepeatWordCell.swift; sourceTree = "<group>"; };
 		603DA026ABA8EFD27F40027D /* Pods_StudWords.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_StudWords.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -94,6 +106,17 @@
 				603DA026ABA8EFD27F40027D /* Pods_StudWords.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		4252E186290978DB000BED6C /* FlashCardsVC */ = {
+			isa = PBXGroup;
+			children = (
+				42BA52E629102DE100A764B6 /* FinishScreen */,
+				4252E18B29097968000BED6C /* FlashCardVC.swift */,
+				4252E18D29097C15000BED6C /* FlashCardView.swift */,
+				4252E18F290988C2000BED6C /* FlashCardViewModel.swift */,
+			);
+			path = FlashCardsVC;
 			sourceTree = "<group>";
 		};
 		428E9CA028E4910E004D43AE = {
@@ -177,6 +200,7 @@
 				428E9CD728EB0BA3004D43AE /* Mappers */,
 				428E9CCD28E5F5F4004D43AE /* Word.swift */,
 				428E9CEA28FD9264004D43AE /* Language.swift */,
+				42BA52E1290AA6C900A764B6 /* Quiz.swift */,
 			);
 			path = DataModel;
 			sourceTree = "<group>";
@@ -210,6 +234,7 @@
 		428E9CDC28EB294E004D43AE /* RepeatWords */ = {
 			isa = PBXGroup;
 			children = (
+				4252E186290978DB000BED6C /* FlashCardsVC */,
 				428E9CDD28EB2974004D43AE /* RepeatWordsVC.swift */,
 				42FDEA852908480200E80C44 /* RepeatWordsViewModel.swift */,
 				42FDEA8729084A9300E80C44 /* RepeatWordCell.swift */,
@@ -229,6 +254,7 @@
 		428E9CE428F075DE004D43AE /* CustomUIBlocks */ = {
 			isa = PBXGroup;
 			children = (
+				42BA52E32910258700A764B6 /* UIButtonWithPassData */,
 				428E9CE528F075FE004D43AE /* UITextField */,
 			);
 			path = CustomUIBlocks;
@@ -293,6 +319,22 @@
 				428E9D0229043674004D43AE /* UIButtonExtension.swift */,
 			);
 			path = Button;
+			sourceTree = "<group>";
+		};
+		42BA52E32910258700A764B6 /* UIButtonWithPassData */ = {
+			isa = PBXGroup;
+			children = (
+				42BA52E4291025C600A764B6 /* PassableUIButton.swift */,
+			);
+			path = UIButtonWithPassData;
+			sourceTree = "<group>";
+		};
+		42BA52E629102DE100A764B6 /* FinishScreen */ = {
+			isa = PBXGroup;
+			children = (
+				42BA52E729102E0800A764B6 /* FinishScreenView.swift */,
+			);
+			path = FinishScreen;
 			sourceTree = "<group>";
 		};
 		B08FFFDEC2C630B1605B9F62 /* Pods */ = {
@@ -423,6 +465,7 @@
 				428E9CB128E4910E004D43AE /* TabViewController.swift in Sources */,
 				42FDEA862908480200E80C44 /* RepeatWordsViewModel.swift in Sources */,
 				428E9CD628EB0B6F004D43AE /* AppStorage.swift in Sources */,
+				4252E18E29097C15000BED6C /* FlashCardView.swift in Sources */,
 				428E9CE928FD91E7004D43AE /* Coordinator.swift in Sources */,
 				428E9CCE28E5F5F4004D43AE /* Word.swift in Sources */,
 				428E9CED28FD92F7004D43AE /* ChooseLanguageViewModel.swift in Sources */,
@@ -431,10 +474,14 @@
 				428E9D0329043675004D43AE /* UIButtonExtension.swift in Sources */,
 				428E9CAD28E4910E004D43AE /* AppDelegate.swift in Sources */,
 				428E9CAF28E4910E004D43AE /* SceneDelegate.swift in Sources */,
+				42BA52E2290AA6C900A764B6 /* Quiz.swift in Sources */,
+				4252E18C29097968000BED6C /* FlashCardVC.swift in Sources */,
 				428E9CEF28FD9536004D43AE /* AddWordViewModel.swift in Sources */,
 				428E9CD928EB0BB3004D43AE /* WordMapper.swift in Sources */,
+				42BA52E829102E0800A764B6 /* FinishScreenView.swift in Sources */,
 				428E9CF628FF189E004D43AE /* DetailWordViewModel.swift in Sources */,
 				428E9CF428FF188F004D43AE /* DetailWordVC.swift in Sources */,
+				42BA52E5291025C600A764B6 /* PassableUIButton.swift in Sources */,
 				428E9CD128EB07F5004D43AE /* AllWordsVC.swift in Sources */,
 				428E9CC828E4A9EE004D43AE /* ChooseLanguageViewController.swift in Sources */,
 				428E9CE128EC8ED6004D43AE /* AddWordVC.swift in Sources */,
@@ -445,6 +492,7 @@
 				428E9CFA29004C16004D43AE /* UIColorExtension.swift in Sources */,
 				428E9CD328EB085A004D43AE /* AllWordsViewModel.swift in Sources */,
 				428E9CE728F0763B004D43AE /* TextFieldWithPadding.swift in Sources */,
+				4252E190290988C2000BED6C /* FlashCardViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -14,13 +14,12 @@ class NavigationVC: UINavigationController {
         
         let appearance = UINavigationBarAppearance()
         appearance.configureWithTransparentBackground()
-        appearance.backgroundColor = .clear
+        appearance.backgroundColor = .mainBgColor
         appearance.titleTextAttributes = [
             .font: UIFont.boldSystemFont(ofSize: 20.0),
-            .foregroundColor: UIColor.white
+            .foregroundColor: UIColor.mainDetailsColor
         ]
-        
-        navigationBar.tintColor = .white
+        navigationBar.tintColor = .mainDetailsColor
         navigationBar.standardAppearance = appearance
         navigationBar.scrollEdgeAppearance = appearance
     }

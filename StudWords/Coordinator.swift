@@ -18,6 +18,8 @@ protocol CoordinatorProtocol {
     func didAddWord()
     
     func showFullWordScreen(word: FullWordModel)
+    
+    func showFlashCardScreen()
 }
 
 final class Coordinator {
@@ -80,6 +82,13 @@ extension Coordinator: CoordinatorProtocol {
         let fullWordVC = DetailWordVC(viewModel: viewModel, coordinator: self)
         navigationController.pushViewController(fullWordVC, animated: true)
     }
+    
+    func showFlashCardScreen() {
+        let viewModel = FlashCardViewModel(storage: AppStorage.shared)
+        let flashCardVC = FlashCardVC(coordinator: self, viewModel: viewModel)
+        navigationController.pushViewController(flashCardVC, animated: true)
+    }
+    
 }
 
 private extension Coordinator {

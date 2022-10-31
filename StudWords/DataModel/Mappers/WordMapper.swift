@@ -21,4 +21,19 @@ enum WordMapper {
             synonym: word.synonym,
             meaning: word.meaning)
     }
+    
+    static func mapToFlashCardModel(word:Word) -> Question {
+        var answers: [String] = ["some", "any" , "new"]
+        answers.append(word.meaning)
+        
+        var mappedAnswer: [Answer] = []
+        
+        for answer in answers {
+            mappedAnswer.append(Answer(text: answer, correct: word.meaning == answer ? true : false))
+        }
+    
+        mappedAnswer.shuffle()
+        
+        return Question(id: word.id, text: word.text, answers: mappedAnswer)
+    }
 }

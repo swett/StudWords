@@ -20,6 +20,10 @@ protocol StorageProtocol {
     func removeWord(word: Word, completion: @escaping (String?) -> Void)
 }
 
+protocol QuizProtocol {
+    func getQuestons(completion: @escaping ([Question]?, String?) -> Void)
+}
+
 enum StorageError: Error {
     case somethingWentWrong
 }
@@ -28,7 +32,7 @@ class AppStorage {
     static let shared = AppStorage()
     private var words: [Word] = []
     private var language: Language?
-
+//    private var questions: [Question] = []
     private init() {
         loadWords()
         tryLoadLanguage()
@@ -84,7 +88,7 @@ extension AppStorage: LanguageServiceProtocol {
 
     func setLanguage(_ language: Language) {
         self.language = language
-        // TODO: save to user defaults
+        // TODO: save to userdefaults
     }
 }
 
@@ -109,3 +113,36 @@ extension AppStorage: StorageProtocol {
     }
 }
 
+//MARK: -QuizProtocol
+
+extension AppStorage: QuizProtocol {
+    func getQuestons(completion: @escaping ([Question]?, String?) -> Void) {
+        let questions = words.map { word in
+            makeQuestion(for: word)
+        }
+        completion(questions, nil)
+        
+    }
+    
+    private func makeQuestion(for word: Word) -> Question {
+        let question = Question(
+            id: word.id,
+            text: word.text,
+            answers: [
+                .mock1,
+                .mock2,
+                .mock3,
+                .mock5,
+                .mock4
+            ]
+        )
+        return question
+    }
+    
+//    private func makeAnswers(for question: Question) -> [Answer] {
+//
+//        [
+//            Answer(text: <#T##String#>, correct: <#T##Bool#>)
+//        ]
+//    }
+}
