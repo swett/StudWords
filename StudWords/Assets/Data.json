@@ -1,44 +1,44 @@
 [
     {
         "id": "1",
-        "text": "Stubborn",
+        "text": "Real estate",
         "synonym": ["nnn"],
-        "meaning": "Лох"
+        "meaning": "Нерухомість"
     },
     {
         "id": "2",
-        "text": "mmm",
+        "text": "Funnel",
         "synonym": ["mmm"],
-        "meaning": "mm"
+        "meaning": "Воронка"
     },
     {
         "id": "3",
-        "text": "hhh",
-        "synonym": ["hhh"],
-        "meaning": "hh"
+        "text": "Ally",
+        "synonym": ["partner"],
+        "meaning": "Союзник"
     },
     {
         "id": "4",
-        "text": "yyy",
-        "synonym": ["yyy"],
-        "meaning": "yy"
+        "text": "Outbound",
+        "synonym": ["outcoming"],
+        "meaning": "Вихідні дзвінки"
     },
     {
         "id": "5",
-        "text": "ttt",
-        "synonym": ["ttt"],
-        "meaning": "tt"
+        "text": "Third-party",
+        "synonym": ["independent"],
+        "meaning": "Третя особа"
     },
     {
         "id": "6",
-        "text": "rrr",
-        "synonym": ["rrr"],
-        "meaning": "rr"
+        "text": "Estimate",
+        "synonym": ["assessing", "evaluate"],
+        "meaning": "Оцінювати"
     },
     {
         "id": "7",
-        "text": "qqq",
-        "synonym": ["qqq"],
-        "meaning": "qq"
+        "text": "To blow",
+        "synonym": ["to lose"],
+        "meaning": "продути"
     }
 ]

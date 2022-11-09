@@ -128,21 +128,29 @@ extension AppStorage: QuizProtocol {
         let question = Question(
             id: word.id,
             text: word.text,
-            answers: [
-                .mock1,
-                .mock2,
-                .mock3,
-                .mock5,
-                .mock4
-            ]
+            answers: makeAnswers(for: word.meaning),
+            answer: word.meaning
         )
         return question
     }
     
-//    private func makeAnswers(for question: Question) -> [Answer] {
-//
-//        [
-//            Answer(text: <#T##String#>, correct: <#T##Bool#>)
-//        ]
-//    }
+    private func makeAnswers(for question: String) -> [Answer] {
+        var mappedAnswer: [Answer] = []
+        var unique: [Answer] = []
+        for i in 1...4 {
+            let answer = words.randomElement()
+            mappedAnswer.append(Answer(text: answer!.meaning, correct: question == answer!.meaning ? true : false))
+            }
+        mappedAnswer.append(Answer(text: question, correct: true))
+        mappedAnswer.shuffle()
+        for arrValue in mappedAnswer {
+                if !unique.contains(where: { $0.text == arrValue.text }) {
+                    unique.append(arrValue)
+                }
+            }
+
+        return unique
+    }
+    
+    
 }

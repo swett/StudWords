@@ -12,6 +12,7 @@ struct Question {
     let id: String
     let text: String
     let answers: [Answer]
+    let answer: String
 }
 
 struct Answer {
@@ -20,9 +21,9 @@ struct Answer {
 }
 
 extension Answer {
-    static var mock1 = Answer(text: "Лох", correct: true)
-    static var mock2 = Answer(text: "Идиот", correct: false)
-    static var mock3 = Answer(text: "Конченный", correct: false)
-    static var mock4 = Answer(text: "Пивас", correct: false)
-    static var mock5 = Answer(text: "Кура", correct: false)
+    static var mock1 = Answer(text: "Нерухомість", correct: true)
+    static var mock2 = Answer(text: "Третя особа", correct: false)
+    static var mock3 = Answer(text: "Вихідні дзвінки", correct: false)
+    static var mock4 = Answer(text: "Воронка", correct: false)
+    static var mock5 = Answer(text: "Союзник", correct: false)
 }
