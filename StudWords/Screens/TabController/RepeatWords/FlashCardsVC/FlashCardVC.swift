@@ -31,6 +31,7 @@ class FlashCardVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         view.backgroundColor = .mainBgColor
         viewModel.view = self
         flashCardView = FlashCardView().then ({ card in
@@ -74,11 +75,10 @@ extension FlashCardVC {
         flashCardView.showMistake(at: index)
     }
     
-    func changeCard() {
-        
-    }
-    func showResult() {
+
+    func showResult(with correctAnswers: Int) {
         flashCardView.alpha = 0
-        finishScreenView.alpha = 1 
+        finishScreenView.alpha = 1
+        finishScreenView.setupData(with: correctAnswers)
     }
 }

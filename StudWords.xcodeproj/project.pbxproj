@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		42451D4E292BD664002E4CE7 /* PoiretOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42451D4D292BD664002E4CE7 /* PoiretOne-Regular.ttf */; };
 		4252E18C29097968000BED6C /* FlashCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4252E18B29097968000BED6C /* FlashCardVC.swift */; };
 		4252E18E29097C15000BED6C /* FlashCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4252E18D29097C15000BED6C /* FlashCardView.swift */; };
 		4252E190290988C2000BED6C /* FlashCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4252E18F290988C2000BED6C /* FlashCardViewModel.swift */; };
@@ -35,7 +36,6 @@
 		428E9CF428FF188F004D43AE /* DetailWordVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E9CF328FF188F004D43AE /* DetailWordVC.swift */; };
 		428E9CF628FF189E004D43AE /* DetailWordViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E9CF528FF189E004D43AE /* DetailWordViewModel.swift */; };
 		428E9CFA29004C16004D43AE /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E9CF929004C16004D43AE /* UIColorExtension.swift */; };
-		428E9D0029006610004D43AE /* Calligraffitti-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 428E9CFF29006610004D43AE /* Calligraffitti-Regular.ttf */; };
 		428E9D0329043675004D43AE /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 428E9D0229043674004D43AE /* UIButtonExtension.swift */; };
 		42BA52E2290AA6C900A764B6 /* Quiz.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BA52E1290AA6C900A764B6 /* Quiz.swift */; };
 		42BA52E5291025C600A764B6 /* PassableUIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42BA52E4291025C600A764B6 /* PassableUIButton.swift */; };
@@ -46,6 +46,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		42451D4D292BD664002E4CE7 /* PoiretOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PoiretOne-Regular.ttf"; sourceTree = "<group>"; };
 		4252E18B29097968000BED6C /* FlashCardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardVC.swift; sourceTree = "<group>"; };
 		4252E18D29097C15000BED6C /* FlashCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardView.swift; sourceTree = "<group>"; };
 		4252E18F290988C2000BED6C /* FlashCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardViewModel.swift; sourceTree = "<group>"; };
@@ -76,7 +77,6 @@
 		428E9CF328FF188F004D43AE /* DetailWordVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWordVC.swift; sourceTree = "<group>"; };
 		428E9CF528FF189E004D43AE /* DetailWordViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWordViewModel.swift; sourceTree = "<group>"; };
 		428E9CF929004C16004D43AE /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
-		428E9CFF29006610004D43AE /* Calligraffitti-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Calligraffitti-Regular.ttf"; sourceTree = "<group>"; };
 		428E9D0229043674004D43AE /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		42BA52E1290AA6C900A764B6 /* Quiz.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Quiz.swift; sourceTree = "<group>"; };
 		42BA52E4291025C600A764B6 /* PassableUIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PassableUIButton.swift; sourceTree = "<group>"; };
@@ -308,7 +308,7 @@
 		428E9CFC29005FBD004D43AE /* Font */ = {
 			isa = PBXGroup;
 			children = (
-				428E9CFF29006610004D43AE /* Calligraffitti-Regular.ttf */,
+				42451D4D292BD664002E4CE7 /* PoiretOne-Regular.ttf */,
 			);
 			path = Font;
 			sourceTree = "<group>";
@@ -408,7 +408,7 @@
 			files = (
 				428E9CB928E49111004D43AE /* LaunchScreen.storyboard in Resources */,
 				428E9CB628E49111004D43AE /* Assets.xcassets in Resources */,
-				428E9D0029006610004D43AE /* Calligraffitti-Regular.ttf in Resources */,
+				42451D4E292BD664002E4CE7 /* PoiretOne-Regular.ttf in Resources */,
 				428E9CCB28E5F5C5004D43AE /* Data.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -65,7 +65,7 @@ extension DetailWordVC {
         wordLabel = UILabel().then({ label in
             view.addSubview(label)
             label.textColor = .mainTextColor
-            label.font = UIFont(name: "Calligraffitti-Regular", size: 30)
+            label.font = UIFont(name: "PoiretOne-Regular", size: 30)
             label.text = "Word Detail"
             label.numberOfLines = 0
             label.textAlignment = .left
@@ -80,7 +80,7 @@ extension DetailWordVC {
         wordText = UILabel().then({ label in
             view.addSubview(label)
             label.textColor = .mainTextColor
-            label.font = UIFont(name: "Calligraffitti-Regular", size: 22)
+            label.font = UIFont(name: "PoiretOne-Regular", size: 22)
             label.numberOfLines = 0
             label.textAlignment = .left
             
@@ -94,7 +94,7 @@ extension DetailWordVC {
         meaningLabel = UILabel().then({ label in
             view.addSubview(label)
             label.textColor = .mainTextColor
-            label.font = UIFont(name: "Calligraffitti-Regular", size: 30)
+            label.font = UIFont(name: "PoiretOne-Regular", size: 30)
             label.text = "Meaning"
             label.numberOfLines = 0
             label.textAlignment = .left
@@ -109,7 +109,7 @@ extension DetailWordVC {
             view.addSubview(label)
             
             label.textColor = .mainTextColor
-            label.font = UIFont(name: "Calligraffitti-Regular", size: 22)
+            label.font = UIFont(name: "PoiretOne-Regular", size: 22)
             label.numberOfLines = 0
             label.textAlignment = .left
             
@@ -122,7 +122,7 @@ extension DetailWordVC {
         synonimLabel = UILabel().then({ label in
             view.addSubview(label)
             label.textColor = .mainTextColor
-            label.font = UIFont(name: "Calligraffitti-Regular", size: 30)
+            label.font = UIFont(name: "PoiretOne-Regular", size: 30)
             label.text = "Synonims"
             label.numberOfLines = 0
             label.textAlignment = .left
@@ -136,7 +136,7 @@ extension DetailWordVC {
         synonimText = UILabel().then({ label in
             view.addSubview(label)
             label.textColor = .mainTextColor
-            label.font = UIFont(name: "Calligraffitti-Regular", size: 22)
+            label.font = UIFont(name: "PoiretOne-Regular", size: 22)
             label.numberOfLines = 0
             label.textAlignment = .left
             

@@ -51,7 +51,7 @@ extension RepeatWordCell {
             containerView.addSubview(label)
             label.backgroundColor = .clear
             label.textColor = .mainTextColor
-            label.font = UIFont(name: "Calligraffitti-Regular", size: 22)
+            label.font = UIFont(name: "PoiretOne-Regular", size: 22)
             
             label.text = "Repeat all words"
             

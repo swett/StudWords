@@ -45,7 +45,7 @@ extension FlashCardView {
             label.backgroundColor = .clear
             label.textColor = .mainTextColor
 //            label.text = "hello"
-            label.font = UIFont(name: "Calligraffitti-Regular", size: 22)
+            label.font = UIFont(name: "PoiretOne-Regular", size: 22)
             
             label.snp.makeConstraints { make in
                 make.top.equalTo(150)
@@ -95,6 +95,7 @@ extension FlashCardView {
         let button = UIButton().then { button in
             
             button.setTitle(answer.text, for: .normal)
+            button.titleLabel?.font = UIFont(name: "PoiretOne-Regular", size: 20)
             button.layer.cornerRadius = 15
             button.backgroundColor = .mainButtonColor
             button.addTarget(self, action: #selector(questionButtonAct), for: .touchUpInside)
@@ -115,17 +116,23 @@ extension FlashCardView {
         didTapAnswer?(index)
     }
     
-    func changeQuestion() {
-        
-    }
-    
     func showMistake(at index: Int) {
         
         guard index < stackView.arrangedSubviews.count else {
             assertionFailure("index out of bounds")
             return
         }
+        
         let button = stackView.arrangedSubviews[index]
+       
+        let animation = CABasicAnimation(keyPath: "position")
+        animation.duration = 0.22
+        animation.repeatCount = 2
+        animation.autoreverses = true
+        animation.fromValue = NSValue(cgPoint: CGPoint(x: button.center.x - 10, y: button.center.y))
+        animation.toValue = NSValue(cgPoint: CGPoint(x: button.center.x + 10, y: button.center.y))
+
+        button.layer.add(animation, forKey: "position")
         button.backgroundColor = .red
         
     }

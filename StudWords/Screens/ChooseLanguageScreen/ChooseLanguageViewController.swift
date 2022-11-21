@@ -64,7 +64,7 @@ extension ChooseLanguageViewController {
             view.addSubview(label)
             label.text = "Choose language"
             
-            label.font = UIFont(name: "Calligraffitti-Regular", size: 40)
+            label.font = UIFont(name: "PoiretOne-Regular", size: 40)
             label.numberOfLines = 0
             label.textAlignment = .left
             label.textColor = .mainTextColor

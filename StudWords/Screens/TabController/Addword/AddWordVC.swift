@@ -124,7 +124,7 @@ extension AddWordVC {
             containerView.addSubview(button)
             button.backgroundColor = .mainButtonColor
             button.setTitle("X", for: .normal)
-            button.titleLabel?.font = UIFont.monospacedSystemFont(ofSize: 18, weight: .thin)
+            button.titleLabel?.font = UIFont(name: "PoiretOne-Regular", size: 18)
             button.addTarget(self, action:#selector(buttonTapped(sender:)) , for: .touchUpInside)
             button.clipsToBounds = false
             button.snp.makeConstraints { make in
@@ -154,7 +154,7 @@ extension AddWordVC {
             label.text = "NEW WORD"
             label.numberOfLines = 0
             label.textColor = .mainTextColor
-            label.font = .monospacedDigitSystemFont(ofSize: 32, weight: .thin)
+            label.font = UIFont(name: "PoiretOne-Regular", size: 32)
             
             label.snp.makeConstraints { make in
                 make.top.equalTo(bgView.snp.top).offset(15)
@@ -220,7 +220,7 @@ extension AddWordVC {
             bgView.addSubview(button)
             button.setTitle("Add", for: .normal)
             button.backgroundColor = .mainButtonColor
-            button.titleLabel?.font = .monospacedDigitSystemFont(ofSize: 18, weight: .light)
+            button.titleLabel?.font = UIFont(name: "PoiretOne-Regular", size: 18)
             button.layer.cornerRadius = 15
             button.alpha = 0
             

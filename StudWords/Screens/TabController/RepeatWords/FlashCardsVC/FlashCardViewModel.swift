@@ -20,7 +20,7 @@ class FlashCardViewModel {
     var currentQuestion: Question?
     private let storage: QuizProtocol!
     var correctAnswers: Int = 0
-    
+    var wrongAnswers: Int = 0
     
     init(storage: QuizProtocol) {
         self.storage = storage
@@ -35,7 +35,7 @@ class FlashCardViewModel {
                 return
             }
             self?.questions = questions
-            print(questions)
+//            print(questions)
         }
     }
 }
@@ -76,13 +76,24 @@ extension FlashCardViewModel {
     func didTapAnswer(with index: Int) {
         let correct = checkAnswer(with: index)
         if correct {
+            correctAnswers += 1
             guard let nextQuestion = getQuestion(after: currentQuestion) else {
-                view?.showResult()
+                view?.showResult(with: correctAnswers)
                 return
             }
+            wrongAnswers = 0
             didFind(question: nextQuestion)
         } else {
             view?.showMistake(at: index)
+            wrongAnswers += 1
+            if wrongAnswers == 2 {
+                guard let nextQuestion = getQuestion(after: currentQuestion) else {
+                    view?.showResult(with: correctAnswers)
+                    return
+                }
+                didFind(question: nextQuestion)
+                wrongAnswers = 0
+            }
         }
        
     }
