@@ -11,7 +11,7 @@ class DetailWordVC: UIViewController {
 
     //MARK: UI
     
-    
+    var closeButton: UIButton!
     
     var wordLabel: UILabel!
     var wordText: UILabel!
@@ -47,6 +47,10 @@ class DetailWordVC: UIViewController {
         viewModel.view = self
     }
     
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        closeButton.layer.cornerRadius = closeButton.bounds.size.width * 0.5
+    }
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         viewModel.viewWillAppear()
@@ -59,7 +63,29 @@ extension DetailWordVC {
     
     func setupUI() {
         
-        
+        closeButton = UIButton().then({ button in
+            view.addSubview(button)
+    //            button.frame =
+                button.setTitle("X", for: .normal)
+                button.backgroundColor = .mainButtonColor
+                button.titleLabel?.font = UIFont(name: "PoiretOne-Regular", size: 18)
+    //            button.layer.cornerRadius = 30
+    //            button.layer.borderWidth = 1
+                button.clipsToBounds = true
+                button.layer.masksToBounds = true
+                button.alpha = 1
+                
+                
+                button.addTarget(self, action: #selector(backToMainScreen) , for: .touchUpInside)
+                button.snp.makeConstraints { make in
+                    make.top.equalTo(view.safeAreaLayoutGuide).offset(20)
+                    make.left.equalToSuperview().inset(15)
+                    make.height.equalTo(30)
+                    make.width.equalTo(30)
+                }
+            })
+            
+           
         
         
         wordLabel = UILabel().then({ label in
@@ -71,7 +97,7 @@ extension DetailWordVC {
             label.textAlignment = .left
             
             label.snp.makeConstraints { make in
-                make.top.equalTo(view.safeAreaLayoutGuide).offset(30)
+                make.top.equalTo(closeButton.snp.bottom).offset(30)
                 make.left.equalToSuperview().inset(30)
             }
         })
@@ -159,6 +185,10 @@ extension DetailWordVC {
         wordText.text = word.text
         meaningText.text = word.meaning
         synonimText.text = "\(word.synonym.joined())\n"
+    }
+    
+    @objc func backToMainScreen(){
+        coordinator.showMainScreen()
     }
 }
 

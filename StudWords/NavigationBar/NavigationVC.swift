@@ -22,6 +22,7 @@ class NavigationVC: UINavigationController {
         navigationBar.tintColor = .mainDetailsColor
         navigationBar.standardAppearance = appearance
         navigationBar.scrollEdgeAppearance = appearance
+        navigationBar.isHidden = true
     }
 }
 

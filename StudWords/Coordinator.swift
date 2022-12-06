@@ -89,6 +89,11 @@ extension Coordinator: CoordinatorProtocol {
         navigationController.pushViewController(flashCardVC, animated: true)
     }
     
+//    func showRepeatWordScreen() {
+//        let repeatWordsController = RepeatWordsVC(coordinator: self)
+//        navigationController.pushViewController(repeatWordsController, animated: true)
+//    }
+    
 }
 
 private extension Coordinator {

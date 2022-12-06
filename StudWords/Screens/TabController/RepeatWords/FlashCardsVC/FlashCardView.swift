@@ -12,20 +12,31 @@ class FlashCardView: UIView {
     
     var didTapAnswer: ((Int) -> Void)?
     
+    private let coordinator: CoordinatorProtocol
+    
     //MARK: UI
     var titleLabel: UILabel!
     var stackView: UIStackView!
     var button: UIButton!
-//    private let question: Question
+    var closeButton: UIButton!
+
     
-    init() {
-//        self.question = question
+    
+    
+    
+    init(coordinator: CoordinatorProtocol) {
+
+        self.coordinator = coordinator
         super.init(frame: .zero)
-//        print(question)
+
         setupUI()
-//        setupData(with: question)
     }
-    
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        layer.borderWidth = 1
+        layer.borderColor = UIColor.mainDetailsColor.cgColor
+        layer.cornerRadius = 10
+    }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
@@ -36,9 +47,6 @@ class FlashCardView: UIView {
 extension FlashCardView {
     func setupUI() {
         backgroundColor = .mainBgColor
-        layer.borderWidth = 1
-        layer.borderColor = UIColor.mainDetailsColor.cgColor
-        layer.cornerRadius = 10
         
         titleLabel = UILabel().then({ label in
             addSubview(label)
@@ -66,10 +74,6 @@ extension FlashCardView {
             }
         })
     }
-    
-    
-    
-    
 }
 
 
@@ -90,7 +94,6 @@ extension FlashCardView {
         
     }
     
-
     func mapAnswer(_ answer: Answer) -> UIButton {
         let button = UIButton().then { button in
             

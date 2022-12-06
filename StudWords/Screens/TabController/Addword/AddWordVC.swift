@@ -24,7 +24,7 @@ class AddWordVC: UIViewController {
     
     let maxDimmedAlpha: CGFloat = 0.65
     let defaultHeight: CGFloat = 690
-    var bgView: UIView!
+    var bgView: UIScrollView!
     var containerView: UIView!
     var dimmedView: UIView!
     var blurView: UIView!
@@ -38,6 +38,8 @@ class AddWordVC: UIViewController {
     var descriptionField: TextFieldWithPadding!
     var synonymField:TextFieldWithPadding!
     
+    //MARK: Calculated property
+    var isExpand:Bool = false
     //MARK: Model
     private let viewModel: AddWordViewModel
 
@@ -64,6 +66,9 @@ class AddWordVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NotificationCenter.default.addObserver(self, selector: #selector(keyboardApperence(notification:)), name: UIResponder.keyboardWillShowNotification, object: nil)
+                NotificationCenter.default.addObserver(self, selector: #selector(keyboardDisappear(notification:)), name: UIResponder.keyboardWillHideNotification, object: nil)
+        print(isExpand)
         configureUI()
         viewModel.view = self
     }
@@ -135,7 +140,7 @@ extension AddWordVC {
             }
         })
         
-        bgView = UIView().then({ bg in
+        bgView = UIScrollView().then({ bg in
             containerView.addSubview(bg)
             bg.layer.cornerRadius = 10
             bg.backgroundColor = .mainBgColor
@@ -177,6 +182,7 @@ extension AddWordVC {
                 make.top.equalTo(presentTitleLabel.snp.bottom).offset(20)
                 make.left.right.equalToSuperview().inset(15)
                 make.height.equalTo(60)
+                make.centerX.equalToSuperview()
             }
         })
         
@@ -195,6 +201,7 @@ extension AddWordVC {
                 make.top.equalTo(wordField.snp.bottom).offset(20)
                 make.height.equalTo(60)
                 make.left.right.equalToSuperview().inset(15)
+                make.centerX.equalToSuperview()
             }
         })
         
@@ -213,6 +220,7 @@ extension AddWordVC {
                 make.top.equalTo(descriptionField.snp.bottom).offset(20)
                 make.height.equalTo(60)
                 make.left.right.equalToSuperview().inset(15)
+                make.centerX.equalToSuperview()
             }
         })
         
@@ -338,6 +346,33 @@ extension AddWordVC {
             synonim: synonymField.text
         )
     }
+
+    @objc func keyboardApperence(notification: NSNotification){
+            if !isExpand{
+                if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+                    let keyboardHeight = keyboardFrame.cgRectValue.height
+                    bgView.contentSize = CGSize(width: self.view.frame.width, height: self.bgView.frame.height + keyboardHeight - 250)
+                }
+                else{
+                    self.bgView.contentSize = CGSize(width: self.view.frame.width, height: self.bgView.frame.height + 50)
+                }
+                isExpand = true
+            }
+        }
+        @objc func keyboardDisappear(notification: NSNotification){
+            if isExpand{
+                if let keyboardFrame: NSValue = notification.userInfo?[UIResponder.keyboardFrameEndUserInfoKey] as? NSValue {
+                    let keyboardHeight = keyboardFrame.cgRectValue.height
+                    self.bgView.contentSize = CGSize(width: self.view.frame.width, height: self.bgView.frame.height - keyboardHeight)
+                }
+                else{
+                    self.bgView.contentSize = CGSize(width: self.view.frame.width, height: self.bgView.frame.height - 50)
+                }
+                isExpand = false
+            }
+            
+        }
+    
 }
 
 

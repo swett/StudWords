@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		42451D4E292BD664002E4CE7 /* PoiretOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 42451D4D292BD664002E4CE7 /* PoiretOne-Regular.ttf */; };
+		42451D51293A4BE9002E4CE7 /* CongratulationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42451D50293A4BE9002E4CE7 /* CongratulationsView.swift */; };
 		4252E18C29097968000BED6C /* FlashCardVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4252E18B29097968000BED6C /* FlashCardVC.swift */; };
 		4252E18E29097C15000BED6C /* FlashCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4252E18D29097C15000BED6C /* FlashCardView.swift */; };
 		4252E190290988C2000BED6C /* FlashCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4252E18F290988C2000BED6C /* FlashCardViewModel.swift */; };
@@ -47,6 +48,7 @@
 
 /* Begin PBXFileReference section */
 		42451D4D292BD664002E4CE7 /* PoiretOne-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PoiretOne-Regular.ttf"; sourceTree = "<group>"; };
+		42451D50293A4BE9002E4CE7 /* CongratulationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CongratulationsView.swift; sourceTree = "<group>"; };
 		4252E18B29097968000BED6C /* FlashCardVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardVC.swift; sourceTree = "<group>"; };
 		4252E18D29097C15000BED6C /* FlashCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardView.swift; sourceTree = "<group>"; };
 		4252E18F290988C2000BED6C /* FlashCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FlashCardViewModel.swift; sourceTree = "<group>"; };
@@ -106,6 +108,14 @@
 				603DA026ABA8EFD27F40027D /* Pods_StudWords.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		42451D4F293A4BA7002E4CE7 /* CAEmitterLayer */ = {
+			isa = PBXGroup;
+			children = (
+				42451D50293A4BE9002E4CE7 /* CongratulationsView.swift */,
+			);
+			path = CAEmitterLayer;
 			sourceTree = "<group>";
 		};
 		4252E186290978DB000BED6C /* FlashCardsVC */ = {
@@ -254,6 +264,7 @@
 		428E9CE428F075DE004D43AE /* CustomUIBlocks */ = {
 			isa = PBXGroup;
 			children = (
+				42451D4F293A4BA7002E4CE7 /* CAEmitterLayer */,
 				42BA52E32910258700A764B6 /* UIButtonWithPassData */,
 				428E9CE528F075FE004D43AE /* UITextField */,
 			);
@@ -474,6 +485,7 @@
 				428E9D0329043675004D43AE /* UIButtonExtension.swift in Sources */,
 				428E9CAD28E4910E004D43AE /* AppDelegate.swift in Sources */,
 				428E9CAF28E4910E004D43AE /* SceneDelegate.swift in Sources */,
+				42451D51293A4BE9002E4CE7 /* CongratulationsView.swift in Sources */,
 				42BA52E2290AA6C900A764B6 /* Quiz.swift in Sources */,
 				4252E18C29097968000BED6C /* FlashCardVC.swift in Sources */,
 				428E9CEF28FD9536004D43AE /* AddWordViewModel.swift in Sources */,

@@ -27,6 +27,13 @@ class FlashCardVC: UIViewController {
     //MARK: UI
     var flashCardView: FlashCardView!
     var finishScreenView: FinishScreenView!
+    var closeButton: UIButton!
+    
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        closeButton.layer.cornerRadius = closeButton.bounds.size.width * 0.5
+    }
     
     
     override func viewDidLoad() {
@@ -34,7 +41,12 @@ class FlashCardVC: UIViewController {
         
         view.backgroundColor = .mainBgColor
         viewModel.view = self
-        flashCardView = FlashCardView().then ({ card in
+        
+        
+        
+        
+        
+        flashCardView = FlashCardView(coordinator: coordinator).then ({ card in
             view.addSubview(card)
             card.alpha = 0
             card.snp.makeConstraints { make in
@@ -43,8 +55,25 @@ class FlashCardVC: UIViewController {
             }
         })
         viewModel.viewDidLoad()
-        
-        finishScreenView = FinishScreenView().then({ finish in
+        closeButton = UIButton().then({ button in
+            view.addSubview(button)
+            button.setTitle("X", for: .normal)
+            button.backgroundColor = .mainButtonColor
+            button.titleLabel?.font = UIFont(name: "PoiretOne-Regular", size: 18)
+            button.clipsToBounds = true
+            button.layer.masksToBounds = true
+            button.alpha = 1
+            
+            
+            button.addTarget(self, action: #selector(backToMainScreen) , for: .touchUpInside)
+            button.snp.makeConstraints { make in
+                make.top.equalTo(view.safeAreaLayoutGuide).offset(5)
+                make.left.equalToSuperview().inset(15)
+                make.height.equalTo(30)
+                make.width.equalTo(30)
+            }
+        })
+        finishScreenView = FinishScreenView(coordinator: coordinator).then({ finish in
             view.addSubview(finish)
             finish.alpha = 0
             finish.snp.makeConstraints { make in
@@ -62,13 +91,12 @@ extension FlashCardVC {
     
     
     func showCard(with question: Question) {
-        
+    
         flashCardView.setupData(with: question)
         flashCardView.alpha = 1
         flashCardView.didTapAnswer = { [weak self] index in
             self?.viewModel.didTapAnswer(with: index)
         }
-        
     }
     
     func showMistake(at index: Int) {
@@ -80,5 +108,10 @@ extension FlashCardVC {
         flashCardView.alpha = 0
         finishScreenView.alpha = 1
         finishScreenView.setupData(with: correctAnswers)
+        closeButton.alpha = 0
+    }
+    
+    @objc func backToMainScreen(){
+        coordinator.showMainScreen()
     }
 }
