@@ -19,6 +19,7 @@ protocol AllWordsModelProtocol {
     func numberOfRows(in section: Int) -> Int
     func model(at indexPath: IndexPath) -> WordViewModel
     func didSelectRow(at indexPath: IndexPath) -> FullWordModel
+    func removeWord(at indexPath: IndexPath, completion: @escaping (String?) -> Void)
 }
 
 
@@ -50,6 +51,14 @@ class AllWordsViewModel {
 
 
 extension AllWordsViewModel: AllWordsModelProtocol {
+    
+    func removeWord(at indexPath: IndexPath, completion: @escaping (String?) -> Void) {
+        let word = words[indexPath.row]
+        words.remove(at: indexPath.row)
+        storage.removeWord(word: word) { _ in
+        }
+    }
+    
     
     
     func viewDidAppear() {

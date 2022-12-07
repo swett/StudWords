@@ -87,13 +87,21 @@ extension AllWordsVC: UITableViewDataSource {
         return cell
     }
     
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool
+    {
+         return true
+    }
+    
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             // TODO: add word removal
             // FIXME: esli ne lox
-//            viewModel.remove(at: indexPath.row) {
+            viewModel.removeWord(at: indexPath) { _ in
 //                tableView.deleteRows(at: [indexPath], with: .fade)
-//            }
+            }
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            
         }
     }
     

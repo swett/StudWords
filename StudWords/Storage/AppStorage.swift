@@ -137,7 +137,7 @@ extension AppStorage: QuizProtocol {
     private func makeAnswers(for question: String) -> [Answer] {
         var mappedAnswer: [Answer] = []
         var unique: [Answer] = []
-        for i in 1...4 {
+        for _ in 1...4 {
             let answer = words.randomElement()
             mappedAnswer.append(Answer(text: answer!.meaning, correct: question == answer!.meaning ? true : false))
             }
